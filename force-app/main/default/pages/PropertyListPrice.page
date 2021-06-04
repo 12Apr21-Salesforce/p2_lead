@@ -1,0 +1,17 @@
+<apex:page controller="NewPropertyPage">
+    <apex:form >
+        <apex:pageBlock title="Properties List Price" >
+            <apex:pageblockSection >
+                <apex:inputField value="{! newProp.Name}"/>
+                <apex:inputField value="{! newProp.Property_ID__c}"/>
+                <apex:outputField label="Apartment Name" value="{! newProp.Apartment_Name__c}">
+                    <apex:inlineEditSupport event="ondblclick"/>
+                </apex:outputField>
+                <apex:inputfield value="{! newProp.Area_in_SqFt__c}"/>
+            </apex:pageblockSection>
+            <apex:pageblockbuttons >
+                <apex:commandButton value="Save" action="{!SaveButton}" />
+            </apex:pageblockbuttons>    
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

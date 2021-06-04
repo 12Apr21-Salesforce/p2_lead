@@ -1,0 +1,17 @@
+<apex:page controller="AgentsController" tabStyle="Contact" lightningStylesheets="true">
+    <body style="background-color: transparent !important">
+    <apex:form >
+        <apex:pageBlock title="Your Selected Agents">
+            <apex:pageMessages />
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!newSearch}" value="New Search" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable var="a" value="{!agents}" >
+                <apex:column value="{!a.Name}" />
+                <apex:column value="{!a.Phone}" />
+                <apex:column value="{!a.Email}" />
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+    </body>
+</apex:page>

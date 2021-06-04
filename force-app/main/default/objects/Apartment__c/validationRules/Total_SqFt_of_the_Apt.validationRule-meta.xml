@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_SqFt_of_the_Apt</fullName>
+    <active>true</active>
+    <description>Mention the total area of the building.</description>
+    <errorConditionFormula>ISBLANK( Total_SqFt_of_the_Building__c )</errorConditionFormula>
+    <errorDisplayField>Total_SqFt_of_the_Building__c</errorDisplayField>
+    <errorMessage>Enter the total area of the building in sqft.</errorMessage>
+</ValidationRule>

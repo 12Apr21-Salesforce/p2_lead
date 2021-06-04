@@ -1,0 +1,37 @@
+<apex:page lightningStylesheets="true" showHeader="false">
+
+    <style>
+        .aboutUs{
+            text-align: center; 
+            font-size: 11pt;
+            color: grey;
+            line-height: 25px; 
+           }
+        
+    </style>
+        
+        
+
+    <body style="background-color: transparent !important">
+    <apex:pageBlock title="About Us">
+    <div class="aboutUs" >
+    
+
+        Seven Stones Construction company is a real estate firm which builds Apartments and Single family houses for sale.<br/> 
+        We build all types of apartments like Studios, loft, Standard Apartment, etc. We have a sales team for marketing who works <br/> 
+        out on all the completed houses for sale. The sales team has an option to give a discount of 10% to any client/customer <br/>
+        from the listed price. List price will be decided by the builder. It is calculated based on the construction cost and area <br/>
+        of the individual unit. If the discount comes more than 10%, then the sales team needs an approval from the builder to proceed further.<br/> 
+        There is an option for clients to select an agent from the available list. 
+        <br/>
+        <br/>
+        On this Website we can help build a new property or sell your existing one.<br/> 
+        You can enter your building information into our system, view our wide array of Agents that help you manage your project,<br/> 
+        or view other Projects we're under taking.      
+
+
+    
+    </div>
+    </apex:pageBlock>
+</body>    
+</apex:page>

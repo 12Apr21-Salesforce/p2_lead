@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "72a6972e-d574-4c75-9aaf-065587e6f2b5",
+  "appPageId" : "e9cd03da-9f94-4382-97a0-6d14bfaff462",
+  "configurationTags" : [ ],
+  "id" : "6bb10c31-0e0e-429e-9c95-1dab77fbf499",
+  "label" : "Hire Me",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-hire-me",
+  "type" : "route",
+  "urlPrefix" : "hire-me"
+}

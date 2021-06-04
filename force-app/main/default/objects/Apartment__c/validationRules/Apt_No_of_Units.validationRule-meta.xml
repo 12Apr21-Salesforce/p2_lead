@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apt_No_of_Units</fullName>
+    <active>true</active>
+    <description>Should mention the number of units in this apartment / community.</description>
+    <errorConditionFormula>ISBLANK( Total_No_Of_Units__c )</errorConditionFormula>
+    <errorDisplayField>Total_No_Of_Units__c</errorDisplayField>
+    <errorMessage>Enter the no of units for this apartment.</errorMessage>
+</ValidationRule>

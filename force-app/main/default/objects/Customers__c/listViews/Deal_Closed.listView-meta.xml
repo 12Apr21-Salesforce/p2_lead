@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deal_Closed</fullName>
+    <columns>NAME</columns>
+    <columns>Property_Interested_In__c</columns>
+    <columns>Phone_No__c</columns>
+    <columns>Stage__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Stage__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <label>Deal Closed</label>
+</ListView>

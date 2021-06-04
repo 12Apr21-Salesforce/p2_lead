@@ -1,0 +1,6 @@
+Hi {!User.Name}
+
+Property {!Property__c.Property_ID__c} has been sold in the Apartment {!Apartment__c.Name}
+
+Thanks,
+Sales Team.

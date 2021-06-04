@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apartment_Units</fullName>
+    <active>true</active>
+    <label>Apartment Units</label>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Available</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sold</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unit_Type__c</picklist>
+        <values>
+            <fullName>Duplex</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Loft</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Micro_Apartment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pent_House</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Apartment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Studio_Apartment</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

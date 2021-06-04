@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "62dc3c17-6271-484b-ba60-b125a4a11028",
+  "appPageId" : "e9cd03da-9f94-4382-97a0-6d14bfaff462",
+  "configurationTags" : [ ],
+  "id" : "d793e238-5f2d-4cbf-820a-5b1d8c2abfee",
+  "label" : "Add New Property",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-add-new-property",
+  "type" : "route",
+  "urlPrefix" : "add-new-property"
+}

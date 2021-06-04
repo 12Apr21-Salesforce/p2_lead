@@ -1,0 +1,5 @@
+Hi {!User.Name}
+
+New {!Apartment__c.Name} is ready for sale. Work on it parallely.
+
+Thanks

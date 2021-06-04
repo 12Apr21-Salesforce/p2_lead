@@ -1,0 +1,30 @@
+<apex:page controller="SearchProperties_CC" lightningStylesheets="true" showHeader="false">
+<apex:slds /> 
+    <apex:form >
+        <apex:pageBlock id="propertiesList" title="Search Available Properties">
+            <apex:panelGrid cellspacing="4" columns="6" style="line-height:2.2em">
+                <apex:outputText >Search for:</apex:outputText>
+                <apex:panelGroup style="padding-right:1em">
+                    <apex:inputText id="searchText" value="{!searchText}"/>
+                    <apex:commandButton status="notifyUser" reRender="propertiesList" value="Search" action="{!Search}"/>
+                </apex:panelGroup>
+                <apex:commandButton status="notifyUser" reRender="propertiesList" value="|<--" title="First" action="{!setCon.first}" disabled="{!NOT(setCon.hasPrevious)}"/>
+                <apex:commandButton status="notifyUser" reRender="propertiesList" value="<-" title="Previous" action="{!setCon.previous}" disabled="{!NOT(setCon.hasPrevious)}"/>
+                <apex:commandButton status="notifyUser" reRender="propertiesList" value="->" title="Next" action="{!setCon.next}" disabled="{!NOT(setCon.hasNext)}"/>
+                <apex:commandButton status="notifyUser" reRender="propertiesList" value="-->|" title="Last" action="{!setCon.last}" disabled="{!NOT(setCon.hasNext)}"/>
+                <apex:actionStatus id="notifyUser" startText="Searching..." stopText=" "></apex:actionStatus>
+            </apex:panelGrid>
+            <pageMessages />
+            <apex:pageBlockTable var="prop" value="{!properties}">
+                <apex:column headerValue="Name">
+                    <apex:outputLink value="/{!prop.Id}">{!prop.Name}</apex:outputLink>
+                </apex:column>
+                <apex:column value="{!prop.Apartment_Name__c}"/>
+                <apex:column value="{!prop.Street_Address__c}"/>
+                <apex:column value="{!prop.City__c}"/>
+            </apex:pageBlockTable>
+            <apex:outputText value="No properties match criteria." rendered="{!AND(NOT(recordsFound),searched)}"/>
+        </apex:pageBlock>
+    </apex:form>
+<!--    <apex:outputLink value="https://revrealestate.force.com/SevenStones">Return Home</apex:outputLink> -->
+</apex:page>

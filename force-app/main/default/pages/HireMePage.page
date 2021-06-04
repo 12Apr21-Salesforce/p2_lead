@@ -1,0 +1,58 @@
+<apex:page Controller="HireMe_CC"  lightningStylesheets="true" showHeader="false">
+<body style="background-color: transparent !important">
+    <apex:form >
+        <apex:pageBlock title="Looking to join Us">
+            
+            <apex:pageBlockSection title="please enter your contact information">
+                   
+                <apex:inputField value="{!neuHire.FirstName}"/>
+                <apex:inputField value="{!neuHire.Email}"/>
+                <apex:inputField value="{!neuHire.LastName}"/>
+                <apex:inputField value="{!neuHire.Phone}"/>
+                
+                <br/>
+                <apex:panelGroup style="float: center">
+                    <apex:commandButton action="{!saveC1}" value="Save"/><br/>
+                    
+                </apex:panelGroup>
+                <apex:outputText value="Information succesfully added" rendered="{!DisplayConfirm}"/>
+                
+                
+                
+            </apex:pageBlockSection>
+
+
+           
+            
+        </apex:pageBlock>        
+    </apex:form>
+    <br/><br/>
+    <apex:form >
+        <apex:pageBlock title="Submit a suggestion">
+        <apex:pageBlockSection >
+            <apex:inputField value="{!nCase.ContactId}"/>
+            <apex:inputField value="{!nCase.Reason}"/>
+            <apex:inputField value="{!nCase.Subject}"/>
+            <apex:inputField value="{!nCase.Priority}"/>
+            <apex:inputField value="{!nCase.Description}"/>
+            <br/>
+            
+            
+            <apex:panelGroup style="float: right">
+                <apex:commandButton action="{!saveC2}" value="Save"/>
+                
+            </apex:panelGroup>
+            <br/>
+            <apex:outputText value="case succesfully added" rendered="{!DisplayConfirm2}"/>
+            
+            
+            
+            
+        </apex:pageBlockSection>
+
+    </apex:pageBlock>
+    </apex:form>
+
+</body>
+   
+</apex:page>

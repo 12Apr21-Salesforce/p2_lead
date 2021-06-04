@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "a264c7a6-b1bf-404d-a9bf-eebbccd582f3",
+  "appPageId" : "e9cd03da-9f94-4382-97a0-6d14bfaff462",
+  "configurationTags" : [ ],
+  "id" : "681f3e68-e9d7-4b8f-b054-3e69779cd718",
+  "label" : "Client Related List",
+  "objectApiName" : "Client__c",
+  "routeType" : "relatedlist-a0I",
+  "type" : "route",
+  "urlPrefix" : "client"
+}

@@ -1,0 +1,14 @@
+body {
+    background-color: white;
+
+}
+
+header {
+    background-image: url("images/headerImage1.jpg");
+    background-color: white;
+    height: 500px;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

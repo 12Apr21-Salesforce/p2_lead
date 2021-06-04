@@ -1,0 +1,49 @@
+{
+  "appPageId" : "e9cd03da-9f94-4382-97a0-6d14bfaff462",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "id" : "72a6972e-d574-4c75-9aaf-065587e6f2b5",
+  "label" : "Hire Me",
+  "regions" : [ {
+    "id" : "7cb8d395-04c3-43dd-95b0-86b613d382a5",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "height" : "400",
+        "pageName" : "HireMePage",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "forceCommunity:visualforcePage",
+      "id" : "9e73ee4c-b0ec-458d-91d8-d4df33bef47b",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "cd9240a7-2857-4fca-b38a-b7c99a13e519",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "455b9218-71b4-4871-9b48-04f347903a0a",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "description" : "",
+        "metaTags" : "",
+        "title" : "Hire Me"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "1237232b-ed8b-4c30-8500-a0c744267790",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "e72b389b-6167-4a4b-8780-eb240945dcf9",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-hire-me"
+}

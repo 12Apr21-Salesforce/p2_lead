@@ -1,0 +1,49 @@
+{
+  "appPageId" : "e9cd03da-9f94-4382-97a0-6d14bfaff462",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "id" : "6bcafafa-023d-4512-a13d-697f517720ba",
+  "label" : "About Us",
+  "regions" : [ {
+    "id" : "42ce070b-2b42-40a1-a498-96ecfe9b0455",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "height" : "300",
+        "pageName" : "AboutUsPage",
+        "recordId" : "{!recordId}"
+      },
+      "componentName" : "forceCommunity:visualforcePage",
+      "id" : "708aa48c-243a-4093-bc0c-695edc162320",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "0e54499d-414c-48c8-9595-b3307d0942a0",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "59263d89-825c-4373-8cce-906d8c42f819",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "description" : "",
+        "metaTags" : "",
+        "title" : "About Us"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "e31396e8-c26e-44b7-8220-588d3803b220",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "bdaf447e-8d5f-4f99-b014-5bba1264cc45",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-about-us"
+}

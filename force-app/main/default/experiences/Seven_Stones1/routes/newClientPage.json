@@ -1,0 +1,11 @@
+{
+  "activeViewId" : "f8130c8a-1a07-4327-afda-b21d9e0408a2",
+  "appPageId" : "e9cd03da-9f94-4382-97a0-6d14bfaff462",
+  "configurationTags" : [ ],
+  "id" : "c0aa630f-54ec-4a86-be90-dad1e3d9d453",
+  "label" : "New Client Page",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-new-client-page",
+  "type" : "route",
+  "urlPrefix" : "NewClientPage"
+}

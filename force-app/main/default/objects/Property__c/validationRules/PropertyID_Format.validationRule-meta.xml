@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PropertyID_Format</fullName>
+    <active>true</active>
+    <description>Format of the property ID should be AA{000}</description>
+    <errorConditionFormula>NOT( REGEX( Property_ID__c , &quot;[A-Z]{2}\\d{3}&quot;) )</errorConditionFormula>
+    <errorDisplayField>Property_ID__c</errorDisplayField>
+    <errorMessage>Property ID should be in the format of &quot;AA345&quot; (Two upper case alphabets followed by 3 digits).</errorMessage>
+</ValidationRule>

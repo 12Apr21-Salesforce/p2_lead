@@ -1,0 +1,18 @@
+<apex:page controller="NewApartmentAndUnits" showHeader="false">
+    <body style="background-color: transparent !important">
+    <apex:form >
+        <apex:pageBlock title="New Apartment page" >
+            <apex:pageblockSection >
+                <apex:inputField value="{! wApt.apt.Name}"/>
+                <apex:inputField value="{! wApt.apt.Total_SqFt_of_the_Building__c}"/>
+                <apex:inputField value="{! wApt.apt.Cost_of_Building__c}"/>
+                <apex:inputfield value="{! wApt.apt.Total_No_Of_Units__c}"/>
+            </apex:pageblockSection>
+            
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!newApartment}" value="Save"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+   </body>
+</apex:page>

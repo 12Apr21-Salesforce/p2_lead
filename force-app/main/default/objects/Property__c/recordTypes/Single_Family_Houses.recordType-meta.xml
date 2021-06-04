@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Single_Family_Houses</fullName>
+    <active>true</active>
+    <label>Single Family Houses</label>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Available</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sold</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Unit_Type__c</picklist>
+        <values>
+            <fullName>2Bed 2Bath</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3Bed 2%2E5Bath</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3Bed 2Bath</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3Bed 3Bath</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4Bed 3Bath</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
