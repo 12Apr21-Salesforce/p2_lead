@@ -87,7 +87,7 @@ Salesforce Platform license. Source API Version: 51.0
 10. Check `Enable Experience Workspaces`.  
 11. Go back to Visual Studio, search entire project with `Ctrl`/`Command` + `Shift` + `F`.  
 ![instruction1](https://imgur.com/TEsFHES.png)
-12. Copy `wyang19a@brave-narwhal-cs90qn.com` and paste it in.
+12. Copy `wyang19a@wise-impala-edsa90.com` and paste it in.
 11. Go back to browser, navigate to `Setup` > `Users` > `Users`.
 12. Copy your own system admin username.   
 ![instruction1](https://imgur.com/ILgD8yh.png)
