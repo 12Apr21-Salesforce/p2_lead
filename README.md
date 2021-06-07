@@ -14,13 +14,13 @@ placeholder
 6. From VS Code, open command pallete with `Command`/`Ctrl` + `Shift` + `P`, and choose `SFDX: Authorize an org`.
 7. Browser window will open, and you will be prompted to login to the org you wish to connect.
 ##### if you are deplying to a brand new playground org, GO ON TO STEP 8.  
-##### If you are deploying to an existing org with `Digital Experience` and `Experience Workspaces` already enabled, SKIP TO STEP 12.
+##### If you are deploying to an existing org with `Digital Experience` and `ExperienceBundle Metadata API` already enabled, SKIP TO STEP 12.
 8. From your org on your browser, navigate to `Setup` > `Lightning Experience Transition Assistant` > `Feature Settings` > `Digital Experiences` > `Settings`  
 8. Check `Enable Digital Experiences` and give it a random domain name, click `Save`.  
 ![instruction1](https://imgur.com/50ixCpu.png)
 9. Navigate back to `Setup` > `Lightning Experience Transition Assistant` > `Feature Settings` > `Digital Experiences` > `Settings`.
-![instruction1](https://imgur.com/TEsFHES.png)
-10. Check `Enable Experience Workspaces`.  
+![instruction1](https://imgur.com/BkYSdPC.png)
+10. Check `Enable ExperienceBundle Metadata API`.  
 11. Go back to Visual Studio, search entire project with `Ctrl`/`Command` + `Shift` + `F`.  
 ![instruction1](https://imgur.com/OZUMX07.png)
 12. Copy `wyang19a@wise-impala-edsa90.com` and paste it in.
