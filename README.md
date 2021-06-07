@@ -19,9 +19,10 @@ placeholder
 8. Check `Enable Digital Experiences` and give it a random domain name, click `Save`.  
 ![instruction1](https://imgur.com/50ixCpu.png)
 9. Navigate back to `Setup` > `Lightning Experience Transition Assistant` > `Feature Settings` > `Digital Experiences` > `Settings`.
+![instruction1](https://imgur.com/TEsFHES.png)
 10. Check `Enable Experience Workspaces`.  
 11. Go back to Visual Studio, search entire project with `Ctrl`/`Command` + `Shift` + `F`.  
-![instruction1](https://imgur.com/TEsFHES.png)
+![instruction1](https://imgur.com/OZUMX07.png)
 12. Copy `wyang19a@wise-impala-edsa90.com` and paste it in.
 11. Go back to browser, navigate to `Setup` > `Users` > `Users`.
 12. Copy your own system admin username.   
