@@ -18,7 +18,7 @@ placeholder
 8. From your org on your browser, navigate to `Setup` > `Lightning Experience Transition Assistant` > `Feature Settings` > `Digital Experiences` > `Settings`  
 8. Check `Enable Digital Experiences` and give it a random domain name, click `Save`.  
 ![instruction1](https://imgur.com/50ixCpu.png)
-9. Navigate back to `Setup` > `Lightning Experience Transition Assistant` > `Feature Settings` > `Digital Experiences` > `Settings`.
+9. Navigate back to `Setup` > `Lightning Experience Transition Assistant` > `Feature Settings` > `Digital Experiences` > `Settings`.  
 ![instruction1](https://imgur.com/BkYSdPC.png)
 10. Check `Enable ExperienceBundle Metadata API`.  
 11. Go back to Visual Studio, search entire project with `Ctrl`/`Command` + `Shift` + `F`.  
