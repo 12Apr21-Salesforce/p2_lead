@@ -1,3 +1,31 @@
-<aura:component>
+<aura:component controller="newApartmentController" implements="flexipage:availableForAllPageTypes">
+  <aura:attribute name="newApartment" type="Apartment__c" default="{
+    'sObjectType': 'Apartment__c',
+    'Name': '',
+    'Total_SqFt_of_the_Building__c': 0,
+    'Cost_of_Building__c': 0,
+    'Total_No_Of_Units__c': 0
+  }"></aura:attribute>
+  <aura:attribute name="apartments" type="Apartment__c[]"></aura:attribute>
+  <aura:attribute name="aptId" type="String"></aura:attribute>
 
+  <lightning:card>
+    <div class="wrapper">
+      <div class="create-form">
+        <form>
+          <lightning:input required="true" name="name" value="{!v.newApartment.Name}" label="Property Name" maxlength="80"  />
+          <lightning:input required="true" type="number" name="sumSqft" value="{!v.newApartment.Total_SqFt_of_the_Building__c}" label="Total SqFt of the Building" min='0' max="99999"  />
+          <lightning:input required="true" type="number" name="cost" value="{!v.newApartment.Cost_of_Building__c}" label="Cost of Building" formatter='currency' step="1"  />
+          <lightning:input type="number" name="numOfUnit" value="{!v.newApartment.Total_No_Of_Units__c}" label="Total No Of Units" min='0' max="99"  />
+          <lightning:button label="Create" onclick="{!c.clickSubmit}" />
+        </form>
+      </div>
+      <div style="display: none" class="detail-container">
+        <!-- table to display details about the apartment -->
+        <p>Hi</p>
+        <!-- Add unit(property) enable adding rows for multiple adds -->
+        
+      </div>
+    </div>
+  </lightning:card>
 </aura:component>	
