@@ -22,8 +22,8 @@
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <requireHttps>true</requireHttps>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>wyang19a@wise-impala-edsa90.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>wyang19a@wise-impala-edsa90.com</siteGuestRecordDefaultOwner>
+    <siteAdmin>diego.maquill@brave-koala-ji0m4.com</siteAdmin>
+    <siteGuestRecordDefaultOwner>diego.maquill@brave-koala-ji0m4.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
     <subdomain>revrealestate</subdomain>
     <urlPathPrefix>SevenStones</urlPathPrefix>

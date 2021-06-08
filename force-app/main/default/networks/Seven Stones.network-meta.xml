@@ -3,9 +3,9 @@
     <allowInternalUserLogin>false</allowInternalUserLogin>
     <allowMembersToFlag>true</allowMembersToFlag>
     <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
-    <communityRoles/>
+    <communityRoles />
     <disableReputationRecordConversations>false</disableReputationRecordConversations>
-    <emailSenderAddress>wyang19a@wise-impala-edsa90.com</emailSenderAddress>
+    <emailSenderAddress>diego.maquill@brave-koala-ji0m4.com</emailSenderAddress>
     <emailSenderName>Seven Stones</emailSenderName>
     <enableCustomVFErrorPageOverrides>false</enableCustomVFErrorPageOverrides>
     <enableDirectMessages>true</enableDirectMessages>

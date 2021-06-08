@@ -13,7 +13,7 @@
     </rules>
     <tasks>
         <fullName>Customer_updated_his_quote_price</fullName>
-        <assignedTo>wyang19a@wise-impala-edsa90.com</assignedTo>
+        <assignedTo>diego.maquill@brave-koala-ji0m4.com</assignedTo>
         <assignedToType>user</assignedToType>
         <description>Customer has updated the price. Look into it at the earliest.</description>
         <dueDateOffset>1</dueDateOffset>
