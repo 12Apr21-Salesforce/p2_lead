@@ -1,7 +1,8 @@
 ({
     clickSubmit : function(component, event, helper) {
-        let newApt = component.get("v.newApartment")
-        console.log(JSON.stringify(newApt))
-        helper.createApartment(component, newApt);
+        helper.createApartment(component, component.get("v.newApartment"));
+    },
+    onCompInit : function(component, event, helper) {
+        helper.loadData(component)
     }
 })
