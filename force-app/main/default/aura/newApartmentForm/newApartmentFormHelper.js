@@ -16,7 +16,13 @@
                 component.set('v.aptId', myApartmentId)
                 component.set('v.apartments', apts)
                 document.querySelector('.create-form').style.display = 'none'
-                document.querySelector('.detail-container').style.display = 'block'
+                component.set('v.aptCreated', true)
+                setTimeout(() => {
+                    document.querySelector('.exampleHolder').style.display = 'none'
+                    document.querySelector('.detail-container').style.display = 'block'
+                    document.querySelector('.create-unit-form').style.display = 'block'
+                }, 500)
+                
                 console.log('reached')
             }
         })
@@ -43,5 +49,13 @@
         
         component.set('v.unitTypePickListValues', unitTypeList)
         component.set('v.PropStatusPLValue', propStatusList)
+    },
+    createUnit : function(component, event) {
+        const aptId = component.get('v.aptId')
+        event.preventDefault()
+        const fields = event.getParams('fields')
+        fields.push('Apartment_Name__c')
+        fields.Apartment_Name__c = aptId
+        component.find('unitRecordForm').submit(fields)
     }
 })

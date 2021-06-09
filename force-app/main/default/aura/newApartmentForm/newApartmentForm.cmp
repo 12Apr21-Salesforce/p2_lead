@@ -6,6 +6,7 @@
     'Cost_of_Building__c': 0,
     'Total_No_Of_Units__c': 0
   }"></aura:attribute>
+  <aura:attribute name="aptCreated" type="Boolean" default="false"></aura:attribute>
   <aura:attribute name="apartments" type="Apartment__c[]"></aura:attribute>
   <aura:attribute name="aptId" type="String"></aura:attribute>
   <aura:attribute name="units" type="Property__c[]"></aura:attribute>
@@ -14,6 +15,7 @@
   <aura:attribute name="selectedUnitType" type="String"></aura:attribute>
   <aura:attribute name="PropStatusPLValue" type="List"></aura:attribute>
   <aura:attribute name="selectedPropStatus" type="String"></aura:attribute>
+  <!-- <aura:attribute name="fields" type="String[]" default="['Apartment_Name__c', 'Name', 'Property_ID__c', 'Area_in_SqFt__c', 'Unit_Type__c', 'Status__c']"/> -->
   <aura:handler name="init" value="{!this}" action="{!c.onCompInit}" />
 
   <lightning:card>
@@ -24,48 +26,62 @@
           <lightning:input required="true" type="number" name="sumSqft" value="{!v.newApartment.Total_SqFt_of_the_Building__c}" label="Total SqFt of the Building" min='0' max="99999"  />
           <lightning:input required="true" type="number" name="cost" value="{!v.newApartment.Cost_of_Building__c}" label="Cost of Building" formatter='currency' step="1"  />
           <lightning:input type="number" name="numOfUnit" value="{!v.newApartment.Total_No_Of_Units__c}" label="Total No Of Units" min='0' max="99"  />
-          <lightning:button label="Create" onclick="{!c.clickSubmit}" />
+          <lightning:button class="slds-button slds-button_brand" label="Create" onclick="{!c.clickSubmit}" />
         </form>
       </div>
-      <div style="display: none" class="detail-container">
-        <lightning:card>
-          <lightning:recordViewForm recordId="{!v.aptId}" objectApiName="Apartment__c">
-            <lightning:outputField fieldName="Name" />
-            <lightning:outputField fieldName="Total_SqFt_of_the_Building__c" />
-            <lightning:outputField fieldName="Cost_of_Building__c" />
-            <lightning:outputField fieldName="Total_No_Of_Units__c" />
-          </lightning:recordViewForm>
-        </lightning:card>
+      <aura:if isTrue="{!v.aptCreated}">
+        <div class="unit-form-wrapper">
+          <div class="exampleHolder">
+            <lightning:spinner aura:id="mySpinner" />
+          </div>
+        <div class="detail-container">
+          <lightning:card>
+            <lightning:recordViewForm recordId="{!v.aptId}" objectApiName="Apartment__c">
+              <lightning:outputField fieldName="Name" />
+              <lightning:outputField fieldName="Total_SqFt_of_the_Building__c" />
+              <lightning:outputField fieldName="Cost_of_Building__c" />
+              <lightning:outputField fieldName="Total_No_Of_Units__c" />
+            </lightning:recordViewForm>
+          </lightning:card>
         <!-- Add unit(property) enable adding rows for multiple adds -->
+        </div>
         <div class="create-unit-form">
-          <!-- required fields -> 
-            Apartment__c, id
-            Name 	              Text(80), 
-            Property_ID__c      (2 upper alpha + 3 nums AA123), Text(5)
-            Area_in_SqFt__c     Number(5,0)
-            UnitType picklist: studio apartment, loft, micro apartment, pent house, standard apartment, duplex 
-            property status picklist: available, on hold, sold 
-            any way to get these picklist values dynamnically? 
-        -->
-        <h1>New Unit(Property__c) form</h1>
-          <form>
-            <lightning:input required="true" name="name" value="{!v.newUnit.Name}" label="Unit Name" maxlength="80"  />
-            <lightning:input required="true" name="Unit ID" value="{!v.newUnit.Property_ID__c}" label="Unit ID" maxlength="80" placeholder="e.g. AA123" />
-            <lightning:input required="true" name="sqft" value="{!v.newUnit.Area_in_SqFt__c}" label="Sqft" type="number" min='0' max="99999"  />
-            <lightning:select name="unitTypeSelect" label="Unit Type" aura:id="mySelect" value="{!v.selectedUnitType}">
-                <aura:iteration items="{!v.unitTypePickListValues}" var="item">
-                    <option text="{!item.label}" value="{!item.value}" selected="{!item.selected}" />
-                </aura:iteration>
-            </lightning:select>
-            <lightning:select name="propStatusSelect" label="Unit Status" aura:id="mySelect" value="{!v.selectedPropStatus}">
+          <div>New Unit(Property__c) form</div>
+          <!-- <lightning:recordForm 
+              id="theForm"
+              aura:id="unitRecordForm"
+              objectApiName="Property__c" 
+              recordId="{!v.recordId}"  
+              fields="{!v.fields}"
+              onsubmit="{!c.handleUnitSubmit}"></lightning:recordForm> -->
+          <lightning:recordEditForm aura:id="unitRecordForm" objectApiName="Property__c">
+            <lightning:inputField fieldName="Apartment_Name__c" style="display: none" value="{!v.aptId}"></lightning:inputField>
+            <lightning:inputField fieldName="Name"></lightning:inputField>
+            <lightning:inputField fieldName="Property_ID__c"></lightning:inputField>
+            <lightning:inputField fieldName="Area_in_SqFt__c"></lightning:inputField>
+            <lightning:inputField fieldName="Unit_Type__c"></lightning:inputField>
+            <lightning:inputField fieldName="Status__c"></lightning:inputField>
+            <lightning:button class="slds-button slds-button_brand" type="submit" label="Create" />
+          </lightning:recordEditForm>
+            <!-- <form>
+              <lightning:input required="true" name="name" value="{!v.newUnit.Name}" label="Unit Name" maxlength="80"  />
+              <lightning:input required="true" name="Unit ID" value="{!v.newUnit.Property_ID__c}" label="Unit ID" maxlength="80" placeholder="e.g. AA123" />
+              <lightning:input required="true" name="sqft" value="{!v.newUnit.Area_in_SqFt__c}" label="Sqft" type="number" min='0' max="99999"  />
+              <lightning:select name="unitTypeSelect" label="Unit Type" aura:id="mySelect" value="{!v.selectedUnitType}">
+                  <aura:iteration items="{!v.unitTypePickListValues}" var="item">
+                      <option text="{!item.label}" value="{!item.value}" selected="{!item.selected}" />
+                  </aura:iteration>
+              </lightning:select>
+              <lightning:select name="propStatusSelect" label="Unit Status" aura:id="mySelect" value="{!v.selectedPropStatus}">
                 <aura:iteration items="{!v.PropStatusPLValue}" var="item">
                     <option text="{!item.label}" value="{!item.value}" selected="{!item.selected}" />
                 </aura:iteration>
-            </lightning:select>
-            <lightning:button label="Create" onclick="{!c.clickSubmit}" />
-          </form>
+              </lightning:select>
+              <lightning:button label="Create" onclick="{!c.clickSubmit}" />
+            </form> -->
+          </div>
         </div>
-      </div>
+      </aura:if>
     </div>
   </lightning:card>
 </aura:component>	
