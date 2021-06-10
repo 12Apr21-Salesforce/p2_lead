@@ -1,3 +1,54 @@
-<aura:component>
-    <aura:attribute name="client" type="Client__c"/>
-</aura:component>	
+<aura:component controller="AuraClientController" implements="flexipage:availableForRecordHome, force:hasRecordId">
+    <aura:attribute name="clients" type="Client__c[]"/>
+    <aura:attribute name="newClient" type="Client__c" default="{'Name':'',
+                                                                   'Client_Email__c': '',
+                                                                   'Client_Phone__c': '',
+                                                                   'Client_Status__c':'',
+                                                                   'Funding_Status__c': '',
+                                                                   'sobjectType':'Client__c'}"/>                                                             
+    <!-- NEW Client FORM -->
+    <div class="slds-col slds-col_padded sslds-p-top_large">
+              
+       <!--<c:campingHeader/>--> 
+        
+        <div aria-labelledby="newClientForm">
+            
+            <!-- BOXED AREA -->
+            <fieldset class="slds-box slds-theme_default slds-container_small">
+                
+                <legend id="newClientForm" class="slds-text-heading_small
+                                                    slds-var-p-vertical_medium">
+                    Add New Client
+                </legend>            
+                <!-- CREATE NEW Campaing FORM -->
+                <lightning:recordEditForm objectApiName="Client__c" aura:id="Theform">
+                    <lightning:inputField fieldName="Name" required="true" aura:id="clientfields"/>
+                    <lightning:inputField fieldName="Client_Email__c" required="true" aura:id="clientfields"/>
+                    <lightning:inputField fieldName="Client_Phone__c" aura:id="clientfields"/>
+                    <lightning:inputField fieldName="Client_Status__c" aura:id="clientfields"/>
+                    <lightning:inputField fieldName="Funding_Status__c" aura:id="clientfields"/>
+                    <lightning:button label="Add Client"
+                                      class="slds-var-m-top_medium"
+                                      variant="brand"
+                                      onclick="{!c.clickCreateClient}"/>
+                </lightning:recordEditForm>
+                <!-- / CREATE NEW EXPENSE FORM --></fieldset>
+            <!-- / BOXED AREA -->
+            
+        </div>
+        <!-- / CREATE NEW EXPENSE -->
+    </div>
+    
+   <!-- <div class="slds-card slds-p-top-  --> <!--/-/--> <!-- medium">
+   
+        <section class="slds-card__body">
+            <div id="list" class="row">
+                <aura:iteration items="{!v.items}" var="item">
+                    <c:campingListItem item="{!item}"/>
+                </aura:iteration>
+            </div>
+        </section>
+    </div>
+    -->
+</aura:component>
+
