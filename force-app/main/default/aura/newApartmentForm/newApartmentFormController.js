@@ -1,6 +1,14 @@
 ({
-    clickSubmit : function(component, event, helper) {
-        console.log('component is,' + component)
-        helper.createApartment(component, component.get("v.newApartment"));
+    handleSuccess : function(component, event, helper) {
+        var toastEvent = $A.get("e.force:showToast");
+        toastEvent.setParams({
+            "title": "Success!",
+            "message": "The property's info has been updated.",
+            "type": "success"
+        });
+        toastEvent.fire();
+        var aptId = event.getParams().response.id;
+        component.set('v.aptId', aptId)
+        helper.showHide(component);
     }
 })

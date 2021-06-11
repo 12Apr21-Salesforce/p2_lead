@@ -1,59 +1,45 @@
-<aura:component controller="newApartmentController" implements="flexipage:availableForAllPageTypes">
-  <aura:attribute name="newApartment" type="Apartment__c" default="{
-    'sObjectType': 'Apartment__c',
-    'Name': '',
-    'Total_SqFt_of_the_Building__c': 0,
-    'Cost_of_Building__c': 0,
-    'Total_No_Of_Units__c': 0
-  }"></aura:attribute>
-  <aura:attribute name="aptCreated" type="Boolean" default="false"></aura:attribute>
-  <aura:attribute name="apartments" type="Apartment__c[]"></aura:attribute>
+<aura:component implements="force:hasRecordId">
+  <aura:attribute name="apartment" type="Apartment__c"></aura:attribute>
   <aura:attribute name="aptId" type="String"></aura:attribute>
-  <aura:attribute name="units" type="Property__c[]"></aura:attribute>
-  <aura:attribute name="newUnit" type="Property__c"></aura:attribute>
-  <!-- <aura:handler name="init" value="{!this}" action="{!c.onCompInit}" /> -->
-
-  <lightning:card>
-    <div class="wrapper">
-      <div class="create-form">
-        <form>
-          <lightning:input required="true" name="name" value="{!v.newApartment.Name}" label="Property Name" maxlength="80"  />
-          <lightning:input required="true" type="number" name="sumSqft" value="{!v.newApartment.Total_SqFt_of_the_Building__c}" label="Total SqFt of the Building" min='0' max="99999"  />
-          <lightning:input required="true" type="number" name="cost" value="{!v.newApartment.Cost_of_Building__c}" label="Cost of Building" formatter='currency' step="1"  />
-          <lightning:input type="number" name="numOfUnit" value="{!v.newApartment.Total_No_Of_Units__c}" label="Total No Of Units" min='0' max="99"  />
-          <lightning:button class="slds-button slds-button_brand" label="Create" onclick="{!c.clickSubmit}" />
-        </form>
-      </div>
-      <aura:if isTrue="{!v.aptCreated}">
-        <div class="unit-form-wrapper">
-          <div class="exampleHolder">
-            <lightning:spinner aura:id="mySpinner" />
-          </div>
-        <div class="detail-container">
-          <lightning:card>
-            <lightning:recordViewForm recordId="{!v.aptId}" objectApiName="Apartment__c">
-              <lightning:outputField fieldName="Name" />
-              <lightning:outputField fieldName="Total_SqFt_of_the_Building__c" />
-              <lightning:outputField fieldName="Cost_of_Building__c" />
-              <lightning:outputField fieldName="Total_No_Of_Units__c" />
-            </lightning:recordViewForm>
-          </lightning:card>
-        <!-- Add unit(property) enable adding rows for multiple adds -->
-        </div>
-        <div class="create-unit-form">
-          <div>New Unit(Property__c) form</div>
-          <lightning:recordEditForm aura:id="unitRecordForm" objectApiName="Property__c">
-            <lightning:inputField fieldName="Apartment_Name__c" style="display: none" value="{!v.aptId}"></lightning:inputField>
-            <lightning:inputField fieldName="Name"></lightning:inputField>
-            <lightning:inputField fieldName="Property_ID__c"></lightning:inputField>
-            <lightning:inputField fieldName="Area_in_SqFt__c"></lightning:inputField>
-            <lightning:inputField fieldName="Unit_Type__c"></lightning:inputField>
-            <lightning:inputField fieldName="Status__c"></lightning:inputField>
-            <lightning:button class="slds-button slds-button_brand" type="submit" label="Create" />
-          </lightning:recordEditForm>
-          </div>
-        </div>
-      </aura:if>
-    </div>
-  </lightning:card>
+  <aura:registerEvent name="recordCreated" type="c:recordCreated"/>
+  <lightning:recordEditForm aura:id="editForm" recordId="{!v.apartment.Id}" objectApiName="Apartment__c" onsuccess="{!c.handleSuccess}">
+    <lightning:card class="slds-is-relative" iconName="custom:custom85" title="Create New Apartment">
+      <lightning:layout multipleRows="true">
+        <lightning:layoutItem size="6">
+            <lightning:inputField fieldName="Name"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6">
+            <lightning:inputField fieldName="Total_SqFt_of_the_Building__c"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6">
+            <lightning:inputField fieldName="Cost_of_Building__c"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6">
+            <lightning:inputField fieldName="Total_No_Of_Units__c"/>
+        </lightning:layoutItem>
+      </lightning:layout>
+      <lightning:layout horizontalAlign="center" class="slds-var-m-top_large">
+          <lightning:button variant="neutral" label="Cancel" title="Cancel" type="text"/>
+          <lightning:button variant="brand" label="Submit" title="Submit" type="submit"/>
+      </lightning:layout>
+    </lightning:card>
+  </lightning:recordEditForm>
+  <lightning:recordViewForm aura:id="viewForm" recordId="{!v.aptId}" objectApiName="Apartment__c" class="slds-hide" >
+    <lightning:card class="slds-is-relative" iconName="custom:custom85" title="Apartment">
+      <lightning:layout multipleRows="true">
+        <lightning:layoutItem size="6">
+            <lightning:outputField fieldName="Name"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6">
+            <lightning:outputField fieldName="Total_SqFt_of_the_Building__c"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6">
+            <lightning:outputField fieldName="Cost_of_Building__c"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6">
+            <lightning:outputField fieldName="Total_No_Of_Units__c"/>
+        </lightning:layoutItem>
+      </lightning:layout>
+    </lightning:card>
+  </lightning:recordViewForm>
 </aura:component>	
