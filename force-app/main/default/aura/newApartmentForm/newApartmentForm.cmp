@@ -40,6 +40,10 @@
             <lightning:outputField fieldName="Total_No_Of_Units__c"/>
         </lightning:layoutItem>
       </lightning:layout>
+      <lightning:layout horizontalAlign="right" class="slds-var-m-top_large">
+          <lightning:button variant="neutral" label="Go Back" title="Go Back" type="text"/>
+          <lightning:button variant="brand" label="Create New Property" title="Create New Property" type="text" onclick="{!c.handleNewProperty}" />
+      </lightning:layout>
     </lightning:card>
   </lightning:recordViewForm>
 </aura:component>	

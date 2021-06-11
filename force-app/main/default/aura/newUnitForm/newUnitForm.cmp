@@ -1,0 +1,33 @@
+<aura:component implements="force:hasRecordId">
+  <aura:attribute name="property" type="Property__c"></aura:attribute>
+  <aura:attribute name="aptId" type="Id"></aura:attribute>
+
+  <aura:handler event="c:recordCreated" action="{!c.handleEvent}" />
+
+  <lightning:recordEditForm aura:id="unitEditForm" recordId="{!v.property.Id}" objectApiName="Property__c" class="slds-hide">
+    <lightning:card class="slds-is-relative" iconName="custom:custom85" title="Create New Property">
+      <lightning:inputField aura:id="resetfield" fieldName="Apartment_Name__c" style="display: none" value="{!v.aptId}"></lightning:inputField>
+      <lightning:layout multipleRows="true">
+        <lightning:layoutItem size="6">
+            <lightning:inputField aura:id="resetfield" fieldName="Name"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6">
+          <lightning:inputField aura:id="resetfield" fieldName="Property_ID__c"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6">
+            <lightning:inputField aura:id="resetfield" fieldName="Area_in_SqFt__c"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="6">
+            <lightning:inputField aura:id="resetfield" fieldName="Unit_Type__c"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem size="12">
+            <lightning:inputField aura:id="resetfield" fieldName="Status__c"/>
+        </lightning:layoutItem>
+      </lightning:layout>
+      <lightning:layout horizontalAlign="center" class="slds-var-m-top_large">
+          <lightning:button variant="neutral" label="Cancel" title="Cancel" type="text"/>
+          <lightning:button variant="brand" label="Submit" title="Submit" type="submit" onclick="{!c.handleCreateUnit}" />
+      </lightning:layout>
+    </lightning:card>
+  </lightning:recordEditForm>
+</aura:component>

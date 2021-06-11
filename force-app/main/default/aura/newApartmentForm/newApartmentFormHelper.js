@@ -1,8 +1,15 @@
 ({
     showHide : function(component) {
-		var editForm = component.find("editForm");
+		let editForm = component.find("editForm");
         $A.util.toggleClass(editForm, "slds-hide");
-        var viewForm = component.find("viewForm");
+        let viewForm = component.find("viewForm");
         $A.util.toggleClass(viewForm, "slds-hide");
-	}
+	},
+    fireCreateEvent : function(aptId) {
+        let evt = $A.get('e.c:recordCreated')
+        evt.setParams({
+            "aptId": aptId
+        })
+        evt.fire()
+    }
 })

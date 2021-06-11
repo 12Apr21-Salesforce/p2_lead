@@ -1,4 +1,8 @@
 ({
+    // handleEvent : function(component, event, helper) {
+    //     let aptId = event.getParam("aptId")
+    //     console.log(aptId);
+    // }
     // clickSubmit : function(component, event, helper) {
     //     console.log('component is,' + component)
     //     helper.createApartment(component, component.get("v.newApartment"));

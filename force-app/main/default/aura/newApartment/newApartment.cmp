@@ -1,59 +1,13 @@
 <aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId">
-  <!-- <aura:attribute name="newApartment" type="Apartment__c" default="{
-    'sObjectType': 'Apartment__c',
-    'Name': '',
-    'Total_SqFt_of_the_Building__c': 0,
-    'Cost_of_Building__c': 0,
-    'Total_No_Of_Units__c': 0
-  }"></aura:attribute>
-  <aura:attribute name="aptCreated" type="Boolean" default="false"></aura:attribute>
-  <aura:attribute name="apartments" type="Apartment__c[]"></aura:attribute>
-  <aura:attribute name="apartment" type="Apartment__c"></aura:attribute>
-  <aura:attribute name="recordId" type="Id"/>
-  <aura:attribute name="aptId" type="String"></aura:attribute>
-  <aura:attribute name="units" type="Property__c[]"></aura:attribute>
-  <aura:attribute name="newUnit" type="Property__c"></aura:attribute> -->
-
-  <!-- <force:recordData aura:id="propertyService"
-      recordId="{!v.recordId}"
-      targetRecord="{!v.apartment}"
-      recordUpdated="{!c.doInit}"
-      layoutType="FULL"/> -->
-
+  <!-- <aura:handler event="c:recordCreated" name="recordCreated" action="{!c.handleEvent}" /> -->
   <lightning:card>
     <div class="wrapper">
       <div class="create-form">
         <c:newApartmentForm />
       </div>
-      <!-- <aura:if isTrue="{!v.aptCreated}">
-        <div class="unit-form-wrapper">
-          <div class="exampleHolder">
-            <lightning:spinner aura:id="mySpinner" />
-          </div>
-        <div class="detail-container">
-          <lightning:card>
-            <lightning:recordViewForm recordId="{!v.aptId}" objectApiName="Apartment__c">
-              <lightning:outputField fieldName="Name" />
-              <lightning:outputField fieldName="Total_SqFt_of_the_Building__c" />
-              <lightning:outputField fieldName="Cost_of_Building__c" />
-              <lightning:outputField fieldName="Total_No_Of_Units__c" />
-            </lightning:recordViewForm>
-          </lightning:card>
-        </div>
-        <div class="create-unit-form">
-          <div>New Unit(Property__c) form</div>
-          <lightning:recordEditForm aura:id="unitRecordForm" objectApiName="Property__c">
-            <lightning:inputField fieldName="Apartment_Name__c" style="display: none" value="{!v.aptId}"></lightning:inputField>
-            <lightning:inputField fieldName="Name"></lightning:inputField>
-            <lightning:inputField fieldName="Property_ID__c"></lightning:inputField>
-            <lightning:inputField fieldName="Area_in_SqFt__c"></lightning:inputField>
-            <lightning:inputField fieldName="Unit_Type__c"></lightning:inputField>
-            <lightning:inputField fieldName="Status__c"></lightning:inputField>
-            <lightning:button class="slds-button slds-button_brand" type="submit" label="Create" />
-          </lightning:recordEditForm>
-          </div>
-        </div>
-      </aura:if> -->
+      <div class="unit-form">
+        <c:newUnitForm/>
+      </div>
     </div>
   </lightning:card>
 </aura:component>	
