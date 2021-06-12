@@ -1,4 +1,5 @@
 ({
+    
     clickCreateClient : function(component, event, helper) {
     // Make sure fields are in an iterable object by casting to array if not already
     let fields = component.find("clientfields");
@@ -17,14 +18,25 @@
     if (!valid) {
         const toastEvent = $A.get("e.force:showToast");
         toastEvent.setParams({
-            "message": "Review all error messages below to correct your data.",
+            "message": "Correct any mistakes before adding the client.",
             "type": "error"
         });
         toastEvent.fire();
     }
-    // Otherwise submit save
+    // Otherwise submit save and show success message
     else {
-        component.find("Theform").submit();
+        
+        component.find("Theinputform").submit();
+        helper.showHide(component);
+        const toastEvent = $A.get("e.force:showToast");
+        toastEvent.setParams({
+            "message": "Client Added Successfully",
+            "type": "success"
+        });
+        toastEvent.fire();
+        helper.gotoAgentList(component,event,helper);
+
+        
     }
 }
 
