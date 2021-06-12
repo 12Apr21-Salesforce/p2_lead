@@ -14,5 +14,14 @@
     handleNewProperty : function(component, event, helper) {
         let aptId = component.get('v.aptId')
         helper.fireCreateEvent(aptId)
+    },
+    clickCreateMoreApt: function(component, event, helper) {
+        // component.set('v.isVisible', false)
+        // component.set('v.isVisible', true)
+        let fields = component.find('field')
+        fields.forEach(function(f) {
+            f.reset()
+        })
+        helper.showHide(component)
     }
-})
+}) 
