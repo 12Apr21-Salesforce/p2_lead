@@ -2,8 +2,6 @@
     showHide : function(component) {
         let Theclientform = component.find("Theclientform");
         $A.util.toggleClass(Theclientform, "slds-hide");
-        //let viewForm = component.find("viewForm");
-        //$A.util.toggleClass(viewForm, "slds-hide");
     },
 
     clear : function (component) {
