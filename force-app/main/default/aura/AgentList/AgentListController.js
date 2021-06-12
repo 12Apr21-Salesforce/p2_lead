@@ -14,10 +14,22 @@
     	component.set("v.Contacts", data.getReturnValue());
 	});
 	$A.enqueueAction(action);
-
 	},
 
-    showSelectedAgents : function(component, event, helper){
-
+    handleSelect : function(component, event, helper) {
+        var selectedRows = event.getParam('selectedRows'); 
+        var setRows = [];
+        for ( var i = 0; i < selectedRows.length; i++ ) { 
+            setRows.push(selectedRows[i]);
+        }
+        component.set("v.selectedContacts", setRows);  
+    },
+    
+    showSelectedAgents: function(component, event, helper) {
+        
+        var records = component.get("v.selectedContacts");
+        for ( var i = 0; i < records.length; i++ ) {
+            alert(records[i].Name);
+        }
     }
 })
