@@ -1,9 +1,9 @@
 .THIS .datatable {
-    z-index: 80000;
+    z-index: 0;
 }
 
 .THIS .message-box {
-    z-index: 99999;
+    z-index: 1;
     position: absolute;
     width: 100%;
     height: 100%;
