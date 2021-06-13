@@ -26,6 +26,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ChangePasswordController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>ChangePasswordControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CommunitiesLandingController</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -90,7 +98,39 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>LightningForgotPasswordController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LightningForgotPasswordControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LightningLoginFormController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LightningLoginFormControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LightningSelfRegisterController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>LightningSelfRegisterControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>MultipleUnitsCreation</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>MyProfilePageController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>MyProfilePageControllerTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -111,6 +151,22 @@
     </classAccesses>
     <classAccesses>
         <apexClass>SeeContactsList</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SiteLoginController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SiteLoginControllerTest</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SiteRegisterController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>SiteRegisterControllerTest</apexClass>
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
@@ -248,6 +304,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.CleanStatus</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Contact.Credit_Card_Expiration_Month__c</field>
         <readable>true</readable>
@@ -329,7 +390,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Contact.Languages__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Contact.LeadSource</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Contact.Level__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -507,18 +578,6 @@
         <field>Property__c.Zip_Code__c</field>
         <readable>true</readable>
     </fieldPermissions>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>Create_Property</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>New_Customer_Creation</flow>
-    </flowAccesses>
-    <flowAccesses>
-        <enabled>false</enabled>
-        <flow>New_Property_Creation_along_with_Apartment</flow>
-    </flowAccesses>
     <layoutAssignments>
         <layout>Apartment__c-Apartment Layout</layout>
     </layoutAssignments>
@@ -593,7 +652,55 @@
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>AnswersHome</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>ApartmentDetails</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>BandwidthExceeded</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ChangePassword</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesLanding</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesLogin</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesSelfReg</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesSelfRegConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>CommunitiesTemplate</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Exception</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>FileNotFound</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ForgotPassword</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>ForgotPasswordConfirm</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
@@ -601,7 +708,19 @@
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>IdeasHome</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>InMaintenance</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>ListOfAgentsPage</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>MyProfilePage</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
@@ -637,12 +756,39 @@
         <enabled>true</enabled>
     </pageAccesses>
     <pageAccesses>
+        <apexPage>SiteLogin</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteRegister</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteRegisterConfirm</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>SiteTemplate</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>StdExceptionTemplate</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>Unauthorized</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>UnderConstruction</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
         <apexPage>addAPropertyPage</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <recordTypeVisibilities>
         <default>true</default>
-        <personAccountDefault>true</personAccountDefault>
         <recordType>Property__c.Apartment_Units</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
@@ -687,6 +833,14 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>AddDirectMessageMembers</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AllowUniversalSearch</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>AllowViewKnowledge</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -735,6 +889,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ChatterEditOwnRecordPost</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ChatterFileLink</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -802,6 +960,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>CreateWorkBadgeDefinition</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>CreateWorkspaces</name>
     </userPermissions>
     <userPermissions>
@@ -826,7 +988,15 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>DistributeFromPersWksp</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>EditActivatedOrders</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EditBillingInfo</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -843,6 +1013,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>EditHtmlTemplates</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>EditKnowledge</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -1042,6 +1216,14 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ManageKnowledge</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageKnowledgeImportExport</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ManageLeads</name>
     </userPermissions>
     <userPermissions>
@@ -1059,6 +1241,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManagePackageLicenses</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManagePartners</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -1098,6 +1284,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ManageSearchPromotionRules</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ManageSharing</name>
     </userPermissions>
     <userPermissions>
@@ -1111,6 +1301,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ManageSynonyms</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ManageTranslation</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -1198,6 +1392,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ShareInternalArticles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ShowCompanyNameAsUserBadge</name>
     </userPermissions>
     <userPermissions>
@@ -1282,6 +1480,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ViewDataLeakageEvents</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ViewEventLogFiles</name>
     </userPermissions>
     <userPermissions>
@@ -1302,6 +1504,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>ViewPlatformEvents</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>ViewPublicDashboards</name>
     </userPermissions>
     <userPermissions>
@@ -1319,5 +1525,9 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewUserPII</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>WorkCalibrationUser</name>
     </userPermissions>
 </Profile>
