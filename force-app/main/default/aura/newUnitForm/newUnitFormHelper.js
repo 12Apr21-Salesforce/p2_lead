@@ -5,9 +5,10 @@
         component.set('v.isVisible', false)
         component.set('v.isVisible', true)
         component.set('v.aptId', event.getParam("aptId"))
+        console.log(component.get("v.aptId"))
     },
     handleCreateUnit : function(component, event) {
-        event.preventDefault()
+        // event.preventDefault()
         var toastEvent = $A.get("e.force:showToast")
         toastEvent.setParams({
             "title": "Success!",
@@ -16,11 +17,19 @@
         })
         toastEvent.fire()
         this.hideResetForm(component);
-        component.set('v.aptId', event.getParam("aptId"))
+        console.log('Look here ' + component.get('v.aptId'))
+        this.fireUnitCreatedEvent(component.get("v.aptId"))
     },
     hideResetForm : function(component) {
         let unitEditForm = component.find("unitEditForm");
         $A.util.toggleClass(unitEditForm, "slds-hide");
+    },
+    fireUnitCreatedEvent: function(aptId) {
+        let evt = $A.get("e.c:unitCreated")
+        evt.setParams({
+            "aptId": aptId
+        })
+        evt.fire()
     }
     // doInit : function(component, event, aptId) { 
         

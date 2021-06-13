@@ -12,8 +12,7 @@
         helper.showHide(component)
     },
     handleNewProperty : function(component, event, helper) {
-        let aptId = component.get('v.aptId')
-        helper.fireCreateEvent(aptId)
+        helper.fireCreateEvent(component)
     },
     clickCreateMoreApt: function(component, event, helper) {
         // component.set('v.isVisible', false)

@@ -1,18 +1,1 @@
-
-.THIS .create-form{
-  border: 1px solid black;
-}
-
-.THIS .detail-container{
-  display: none;
-  border: 1px solid black;
-}
-
-.THIS .create-unit-form{
-  display: none;
-  border: 1px solid black;
-}
-
-.THIS .unit-form-wrapper{
-  border: 1px solid red;
-}
+.THIS .create-form {}

@@ -1,13 +1,13 @@
-<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId">
-  <!-- <aura:handler event="c:recordCreated" name="recordCreated" action="{!c.handleEvent}" /> -->
-  <lightning:card>
-    <div class="wrapper">
-      <div class="create-form">
-        <c:newApartmentForm />
-      </div>
-      <div class="unit-form">
-        <c:newUnitForm/>
-      </div>
-    </div>
-  </lightning:card>
-</aura:component>	
+<aura:component implements="forceCommunity:availableForAllPageTypes, flexipage:availableForAllPageTypes,force:hasRecordId" access="global">
+    <!-- <aura:handler event="c:recordCreated" name="recordCreated" action="{!c.handleEvent}" /> -->
+    <lightning:card>
+        <div class="wrapper">
+            <div class="create-form">
+                <c:newApartmentForm />
+            </div>
+            <div class="unit-form">
+                <!-- <c:newUnitForm/> -->
+            </div>
+        </div>
+    </lightning:card>
+</aura:component>
