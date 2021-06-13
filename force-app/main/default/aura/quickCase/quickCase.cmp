@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable, flexipage:availableForAllPageTypes, flexipage:availableForRecordHome, force:hasRecordId, force:lightningQuickAction" access="global">
+    <aura:attribute name="fields" type="String[]" default="['Status', 'AccountId', 'ContactId', 'Origin', 'Subject']" />
+    <aura:attribute name="recordId" type="String" />
+
+    <lightning:card title="Quick Case" iconName="standard:case">
+        <div class="slds-var-p-horizontal_small">
+            <lightning:recordForm objectApiName="Case" fields="{!v.fields}" onsuccess="{!c.handleSuccess}" />
+        </div>
+    </lightning:card>
+</aura:component>
