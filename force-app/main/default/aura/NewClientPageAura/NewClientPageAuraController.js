@@ -1,5 +1,6 @@
 ({
     doInit : function(cmp, event, helper) {
+        //pageReference to AgentList Component
         var navService = cmp.find("navService");
         var pageReference = {
             
@@ -19,7 +20,7 @@
     },
     
     clickCreateClient : function(component, event, helper) {
-    // Make sure fields are in an iterable object by casting to array if not already
+
     let fields = component.find("clientfields");
     if (fields) {
         fields = Array.isArray(fields) ? fields : [fields];
@@ -28,11 +29,10 @@
         fields = [];
     }
     const valid = fields.reduce((validSoFar, field) => {
-        // Return whether all fields up to this point are valid and whether current field is valid
-        // reportValidity returns validity and also displays/clear message on element based on validity
+
         return (validSoFar && field.reportValidity());
     }, true);
-    // If all fields aren't validated, throw error message
+
     if (!valid) {
         const toastEvent = $A.get("e.force:showToast");
         toastEvent.setParams({
@@ -41,7 +41,6 @@
         });
         toastEvent.fire();
     }
-    // Otherwise submit save and show success message
     else {
         
         component.find("Theinputform").submit();
@@ -53,8 +52,6 @@
         });
         toastEvent.fire();
         helper.handleNavigate(component, event, helper);
-
-        
     }
 }
 

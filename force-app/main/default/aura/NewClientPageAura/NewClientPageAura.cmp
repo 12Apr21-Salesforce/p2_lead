@@ -1,5 +1,6 @@
-<aura:component implements="flexipage:availableForRecordHome, forceCommunity:availableForAllPageTypes, force:appHostable, force:hasRecordId"
-    access="global">
+<aura:component implements="flexipage:availableForRecordHome, forceCommunity:availableForAllPageTypes, 
+                force:appHostable, force:hasRecordId"
+                access="global">
     <lightning:navigation aura:id="navService"/>
     <aura:attribute name="pageReference" type="Object"/>
     <aura:attribute name="url" type="String"/>
@@ -12,18 +13,13 @@
                                                                    'sobjectType':'Client__c'}"/>
     <aura:handler name="init" value="{! this }" action="{! c.doInit }"/>
                                                           
-    <!-- NEW Client FORM -->
     <div aura:id="Theclientform"  class="slds-col slds-col_padded slds-p-top_large">
-
         <div aria-labelledby="newClientForm">
-            <!-- BOXED AREA -->
             <fieldset class="slds-box slds-theme_default slds-container_small">
-                
                 <legend id="newClientForm" class="slds-text-heading_small
                                                     slds-var-p-vertical_medium">
                 Add Client
                 </legend>            
-                <!-- CREATE NEW Camping FORM -->
                 <lightning:recordEditForm aura:id="Theinputform" objectApiName="Client__c">
                     <lightning:inputField fieldName="Name" required="true" aura:id="clientfields"/>
                     <lightning:inputField fieldName="Client_Email__c" required="true" aura:id="clientfields"/>
@@ -35,23 +31,8 @@
                                       variant="brand"
                                       onclick="{!c.clickCreateClient}"/>
                 </lightning:recordEditForm>
-                <!-- / CREATE NEW EXPENSE FORM --></fieldset>
-            <!-- / BOXED AREA -->
-            
+                </fieldset>
         </div>
-        <!-- / CREATE NEW EXPENSE -->
     </div>
-    
-   <!-- <div class="slds-card slds-p-top-  --> <!--/-/--> <!-- medium">
-   
-        <section class="slds-card__body">
-            <div id="list" class="row">
-                <aura:iteration items="{!v.items}" var="item">
-                    <c:campingListItem item="{!item}"/>
-                </aura:iteration>
-            </div>
-        </section>
-    </div>
-    -->
 </aura:component>
 
