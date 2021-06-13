@@ -67,5 +67,18 @@ public with sharing class SearchProperties_CC {
         List<Property__c> propertylist = [select Id, Name, Apartment_Name__r.Name, Street_Address__c, City__c from Property__c];
         return propertylist;
     }
+    
+     @AuraEnabled
+    public static map<String,Object> getParentDetailsWithoutWrapper(){
+        map<String,Object> mapData = new map<String,Object>();
+        list<Property__c> listProp  = new list<Property__c>();
+            for(Property__c objProp : [Select Id, Name, Apartment_Name__r.Name, Street_Address__c, City__c
+                                      from Property__c limit 5]){
+                      listProp.add(objProp);                                                 
+                
+            }
+        mapData.put('ParentDetails',JSON.serialize(listProp));
+        return mapData;
+    }
 
 }
