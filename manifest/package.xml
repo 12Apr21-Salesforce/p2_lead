@@ -318,6 +318,11 @@
 		<name>WorkflowRule</name>
 	</types>
 	<types>
+                <members>SearchandSortProperty</members>
+                <members>SearchProperty</members>
+		<name>AuraDefinitionBundle</name>
+        </types>
+	<types>
 		<members>newApartment</members>
 		<members>newApartmentForm</members>
 		<members>newUnitForm</members>
