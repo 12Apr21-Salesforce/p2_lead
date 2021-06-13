@@ -312,6 +312,11 @@
 		<name>WorkflowFieldUpdate</name>
 	</types>
 	<types>
+        <members>SearchandSortProperty</members>
+        <members>SearchProperty</members>
+		<name>AuraDefinitionBundle</name>
+    </types>
+	<types>
 		<members>Property__c.Property Sold</members>
 		<name>WorkflowRule</name>
 	</types>
