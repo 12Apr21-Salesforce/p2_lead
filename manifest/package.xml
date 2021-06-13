@@ -324,6 +324,7 @@
 		<members>relatedProperties</members>
 		<members>recordCreated</members>
 		<members>unitCreated</members>
+		<members>quickCase</members>
 		<name>AuraDefinitionBundle</name>
 	</types>
 	<version>51.0</version>
