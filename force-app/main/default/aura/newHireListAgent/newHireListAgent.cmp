@@ -2,10 +2,10 @@
     <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
     <aura:attribute name="candidate" type="Contact"/>
     <lightning:card title="{!v.candidate.Name}" iconName="standard:goal">        
-          <p>First Name:<lighting:formattedText value="{!v.candidate.FirstName}"/></p>
-          <p>Last Name:<lighting:formattedText value="{!v.candidate.LastName}" /></p>
-          <p>Email:<lighting:formattedEmail value="{!v.candidate.Email}" /></p>
-          <p>Phone:<lighting:formattedPhone value="{!v.candidate.Phone}"/></p>
+          <p>First Name:<lightning:formattedText value="{!v.candidate.FirstName}"/></p>
+          <p>Last Name:<lightning:formattedText value="{!v.candidate.LastName}" /></p>
+          <p>Email:<lightning:formattedEmail value="{!v.candidate.Email}" /></p>
+          <p>Phone:<lightning:formattedPhone value="{!v.candidate.Phone}"/></p>
     <!--       <p>
             <lightning:input type="toggle"                            
                          label="Packed?"                           
