@@ -24,7 +24,7 @@
                     <input class="field" id="phone" name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
                 </div>
                 <div class="field-set">
-                    <lagit bel class="field-label" for="subject">Subject</lagit>
+                    <label class="field-label" for="subject">Subject</label>
                     <input class="field" id="subject" name="subject" type="text" />
                 </div>
             </div>
