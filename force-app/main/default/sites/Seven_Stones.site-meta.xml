@@ -22,9 +22,11 @@
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <requireHttps>true</requireHttps>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>migmccrary@creative-moose-2bjtkn.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>migmccrary@creative-moose-2bjtkn.com</siteGuestRecordDefaultOwner>
+
+    <siteAdmin>wyang19a@empathetic-unicorn-o2aquf.com</siteAdmin>
+    <siteGuestRecordDefaultOwner>wyang19a@empathetic-unicorn-o2aquf.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
-    <subdomain>p2-seven-stones-aura-developer-edition</subdomain>
+    <subdomain>sevenstone-developer-edition</subdomain>
+  
     <urlPathPrefix>SevenStones</urlPathPrefix>
 </CustomSite>

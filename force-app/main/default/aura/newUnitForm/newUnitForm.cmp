@@ -1,0 +1,46 @@
+<aura:component implements="flexipage:availableForAllPageTypes, force:hasRecordId, forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="property" type="Property__c"></aura:attribute>
+    <aura:attribute name="aptId" type="String"></aura:attribute>
+    <aura:attribute name="isVisible" type="Boolean" default="true"></aura:attribute>
+    <aura:registerEvent name="unitCreated" type="c:unitCreated" />
+    <!-- <aura:attribute name="apartments" type="Apartment__c[]"></aura:attribute>
+  <aura:attribute name="remainingSqft" type="String"></aura:attribute>
+  <aura:attribute name="remainingUnits" type="String"></aura:attribute> -->
+
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}"></aura:handler> -->
+    <aura:handler event="c:recordCreated" action="{!c.handleEvent}" />
+
+    <lightning:recordEditForm aura:id="unitEditForm" recordId="{!v.property.Id}" objectApiName="Property__c" class="slds-hide" onsuccess="{!c.handleCreateUnit}">
+        <!-- <div class="status-bar">
+      <div class="sqft-status">{!v.remainingSqft}</div>
+      <div class="unitNum-status">{!v.remainingUnits}</div>
+    </div> -->
+        <lightning:card class="slds-is-relative" iconName="custom:custom85" title="Create New Property">
+            <aura:if isTrue="{!v.isVisible}">
+                <lightning:inputField class="slds-hide" aura:id="resetfield" fieldName="Apartment_Name__c" value="{!v.aptId}">
+                </lightning:inputField>
+                <lightning:layout multipleRows="true">
+                    <lightning:layoutItem size="6">
+                        <lightning:inputField aura:id="resetfield" fieldName="Name" />
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="6">
+                        <lightning:inputField aura:id="resetfield" default="AA123" fieldName="Property_ID__c" />
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="6">
+                        <lightning:inputField aura:id="resetfield" fieldName="Area_in_SqFt__c" />
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="6">
+                        <lightning:inputField aura:id="resetfield" fieldName="Unit_Type__c" />
+                    </lightning:layoutItem>
+                    <lightning:layoutItem size="12">
+                        <lightning:inputField aura:id="resetfield" fieldName="Status__c" />
+                    </lightning:layoutItem>
+                </lightning:layout>
+                <lightning:layout horizontalAlign="center" class="slds-var-m-top_large">
+                    <lightning:button variant="neutral" label="Cancel" title="Cancel" type="text" onclick="{!c.handleCancel}" />
+                    <lightning:button variant="brand" label="Submit" title="Submit" type="submit" onclick="" />
+                </lightning:layout>
+            </aura:if>
+        </lightning:card>
+    </lightning:recordEditForm>
+</aura:component>

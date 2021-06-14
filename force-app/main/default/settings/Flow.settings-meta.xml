@@ -10,7 +10,7 @@
     <enableFlowFieldFilterEnabled>true</enableFlowFieldFilterEnabled>
     <enableFlowFormulasFixEnabled>true</enableFlowFormulasFixEnabled>
     <enableFlowInterviewSharingEnabled>true</enableFlowInterviewSharingEnabled>
-    <enableFlowNullPreviousValueFix>true</enableFlowNullPreviousValueFix>
+    <enableFlowNullPreviousValueFix>false</enableFlowNullPreviousValueFix>
     <enableFlowPauseEnabled>false</enableFlowPauseEnabled>
     <enableFlowUseApexExceptionEmail>false</enableFlowUseApexExceptionEmail>
     <enableLightningRuntimeEnabled>true</enableLightningRuntimeEnabled>

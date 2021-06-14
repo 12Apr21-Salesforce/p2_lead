@@ -5,7 +5,9 @@
     <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
     <communityRoles/>
     <disableReputationRecordConversations>false</disableReputationRecordConversations>
-    <emailSenderAddress>migmccrary@creative-moose-2bjtkn.com</emailSenderAddress>
+
+    <emailSenderAddress>wyang19a@empathetic-unicorn-o2aquf.com</emailSenderAddress>
+
     <emailSenderName>Seven Stones</emailSenderName>
     <enableCustomVFErrorPageOverrides>false</enableCustomVFErrorPageOverrides>
     <enableDirectMessages>true</enableDirectMessages>

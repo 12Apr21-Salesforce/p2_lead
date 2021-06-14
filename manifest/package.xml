@@ -51,6 +51,7 @@
 		<members>LightningSelfRegisterControllerTest</members>
 		<members>ChangePasswordController</members>
 		<members>ChangePasswordControllerTest</members>
+		<members>relatedPropertiesController</members>
 		<name>ApexClass</name>
 	</types>
 <types>
@@ -164,6 +165,7 @@
 		<members>Property__c.Zip_Code__c</members>
 		<name>CustomField</name>
 	</types>
+	
 	<types>
 		<members>Apartment__c</members>
 		<members>Client__c</members>
@@ -318,8 +320,28 @@
 		<name>WorkflowFieldUpdate</name>
 	</types>
 	<types>
+        <members>SearchandSortProperty</members>
+        <members>SearchProperty</members>
+		<name>AuraDefinitionBundle</name>
+    </types>
+	<types>
 		<members>Property__c.Property Sold</members>
 		<name>WorkflowRule</name>
+	</types>
+	<types>
+                <members>SearchandSortProperty</members>
+                <members>SearchProperty</members>
+		<name>AuraDefinitionBundle</name>
+        </types>
+	<types>
+		<members>newApartment</members>
+		<members>newApartmentForm</members>
+		<members>newUnitForm</members>
+		<members>relatedProperties</members>
+		<members>recordCreated</members>
+		<members>unitCreated</members>
+		<members>quickCase</members>
+		<name>AuraDefinitionBundle</name>
 	</types>
 	<version>51.0</version>
 </Package>
