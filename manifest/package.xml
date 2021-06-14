@@ -4,6 +4,8 @@
 		<members>AgentTestDataFactory</members>
 		<members>AgentsController</members>
 		<members>AgentsController_Test</members>
+		<members>AgentListController</members>
+		<members>AgentListController_Test</members>
 		<members>ApartmentsData</members>
 		<members>AptProp_Test</members>
 		<members>CommunitiesLandingController</members>
@@ -52,6 +54,10 @@
 		<members>relatedPropertiesController</members>
 		<name>ApexClass</name>
 	</types>
+<types>
+        <members>NewClientPageAura</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
 	<types>
 		<members>AboutUsPage</members>
 		<members>addAPropertyPage</members>

@@ -22,9 +22,11 @@
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <requireHttps>true</requireHttps>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
+
     <siteAdmin>wyang19a@empathetic-unicorn-o2aquf.com</siteAdmin>
     <siteGuestRecordDefaultOwner>wyang19a@empathetic-unicorn-o2aquf.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
     <subdomain>sevenstone-developer-edition</subdomain>
+  
     <urlPathPrefix>SevenStones</urlPathPrefix>
 </CustomSite>
