@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionOverrides>
         <actionName>Accept</actionName>
         <type>Default</type>
@@ -163,16 +163,6 @@
     <pluralLabel>Properties</pluralLabel>
     <profileSearchLayouts>
         <fields>NAME</fields>
-        <fields>Apartment_Name__c</fields>
-        <fields>Property_ID__c</fields>
-        <fields>Area_in_SqFt__c</fields>
-        <fields>Unit_Type__c</fields>
-        <fields>Status__c</fields>
-        <fields>Customer_Price__c</fields>
-        <profileName>SS Users</profileName>
-    </profileSearchLayouts>
-    <profileSearchLayouts>
-        <fields>NAME</fields>
         <fields>Property_ID__c</fields>
         <fields>Apartment_Name__c</fields>
         <fields>Area_in_SqFt__c</fields>
@@ -180,6 +170,16 @@
         <fields>Status__c</fields>
         <fields>Year_Build__c</fields>
         <profileName>System Administrator</profileName>
+    </profileSearchLayouts>
+    <profileSearchLayouts>
+        <fields>NAME</fields>
+        <fields>Apartment_Name__c</fields>
+        <fields>Property_ID__c</fields>
+        <fields>Area_in_SqFt__c</fields>
+        <fields>Unit_Type__c</fields>
+        <fields>Status__c</fields>
+        <fields>Customer_Price__c</fields>
+        <profileName>SS Users</profileName>
     </profileSearchLayouts>
     <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
     <recordTypeTrackHistory>false</recordTypeTrackHistory>
@@ -189,8 +189,6 @@
         <searchResultsAdditionalFields>Bath_Rooms__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Bed_Rooms__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Customer_Price__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields xsi:nil="true"></searchResultsAdditionalFields>
-        <searchResultsAdditionalFields xsi:nil="true"></searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Unit_Type__c</searchResultsAdditionalFields>
     </searchLayouts>

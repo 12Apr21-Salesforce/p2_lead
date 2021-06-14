@@ -22,9 +22,9 @@
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <requireHttps>true</requireHttps>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>wyang19a@wise-impala-edsa90.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>wyang19a@wise-impala-edsa90.com</siteGuestRecordDefaultOwner>
+    <siteAdmin>migmccrary@creative-moose-2bjtkn.com</siteAdmin>
+    <siteGuestRecordDefaultOwner>migmccrary@creative-moose-2bjtkn.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
-    <subdomain>revrealestate</subdomain>
+    <subdomain>p2-seven-stones-aura-developer-edition</subdomain>
     <urlPathPrefix>SevenStones</urlPathPrefix>
 </CustomSite>
