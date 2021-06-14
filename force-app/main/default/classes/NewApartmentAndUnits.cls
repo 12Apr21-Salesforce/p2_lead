@@ -5,6 +5,7 @@ public class NewApartmentAndUnits {
     public NewApartmentAndUnits(){
         wApt = new WrapAptProp(new Apartment__c(), new List<Property__c>());
         Idkey = ApexPages.currentPage().getParameters().get('id');
+        System.debug(Idkey);
         if(Idkey != null){
             wApt.apt = [select Id, Name, Total_SqFt_of_the_Building__c,Cost_of_Building__c, 
                        Cons_Cost_per_SqFt__c,Total_No_Of_Units__c from Apartment__c where id=:Idkey limit 1];

@@ -1,0 +1,30 @@
+.THIS .datatable {
+    z-index: 0;
+}
+
+.THIS .message-box {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(103, 128, 159, 0.6);
+    top: 0;
+    left: 0;
+}
+
+.THIS .flexbox {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.THIS .message {
+    background-color: white;
+    border-radius: 10px;
+    width: 70%;
+    padding: 20px;
+    pointer-events: none;
+    text-align: center;
+}

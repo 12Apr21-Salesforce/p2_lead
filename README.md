@@ -23,7 +23,7 @@ placeholder
 10. Check `Enable ExperienceBundle Metadata API`.  
 11. Go back to Visual Studio, search entire project with `Ctrl`/`Command` + `Shift` + `F`.  
 ![instruction1](https://imgur.com/OZUMX07.png)
-12. Copy `lavieenszechuan1433@mindful-moose-kcg2ym.com` and paste it in.
+12. Copy `wyang19a@empathetic-unicorn-o2aquf.com` and paste it in.
 11. Go back to browser, navigate to `Setup` > `Users` > `Users`.
 12. Copy your own system admin username.   
 ![instruction1](https://imgur.com/ILgD8yh.png)

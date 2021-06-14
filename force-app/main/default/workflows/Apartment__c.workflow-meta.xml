@@ -5,7 +5,7 @@
         <description>New Apartment Creation Alert</description>
         <protected>false</protected>
         <recipients>
-            <recipient>lavieenszechuan1433@mindful-moose-kcg2ym.com</recipient>
+            <recipient>wyang19a@empathetic-unicorn-o2aquf.com</recipient>
             <type>user</type>
         </recipients>
         <senderType>CurrentUser</senderType>
