@@ -1,6 +1,5 @@
 <aura:component controller="AgentListController" 
-                implements="flexipage:availableForRecordHome, forceCommunity:availableForAllPageTypes, 
-                force:appHostable, force:hasRecordId"
+                implements="flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes,force:appHostable,force:hasRecordId"
                 access="global">
     <!--<lightning:navigation aura:id="navService"/>
     <aura:attribute name="pageReference" type="Object"/>
@@ -98,4 +97,3 @@
     </aura:set>
     </aura:if>  
 </aura:component>
-
