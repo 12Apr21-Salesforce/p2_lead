@@ -1,0 +1,77 @@
+.THIS.wrapper {
+    display: flex;
+    margin: 0 auto;
+    /* width: 100%; */
+}
+
+.THIS .field-group {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.THIS .row {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    gap: 1em;
+}
+
+.THIS .field-set {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+.THIS .field .field-label {
+    width: inherit;
+}
+
+.THIS .field-label {
+    font-size: 1.3rem;
+    text-align: left;
+}
+
+.THIS .desc {}
+
+.THIS input.field {
+    min-height: 40px;
+    min-width: 250px;
+    border: 2px solid rgb(5, 115, 159);
+    font-size: 1rem;
+    font-size: 1.3rem;
+}
+
+.THIS textarea.field {
+    font-size: 1.3rem;
+    border: 2px solid rgb(5, 115, 159);
+    min-height: 200px;
+    resize: none;
+}
+
+.THIS .field:focus {
+    outline: none;
+    box-shadow: 0px 0px 2px #0066ff;
+}
+
+.THIS .btn-row {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.THIS .submit-btn {
+    font-size: 1.3rem;
+    min-width: 100%;
+    border: 2px solid white;
+    background-color: rgb(5, 115, 159);
+    color: white;
+    transition: 0.3s;
+}
+
+.THIS .submit-btn:hover {
+    color: rgb(5, 115, 159);
+    background-color: white;
+    border: 2px solid rgb(5, 115, 159);
+}

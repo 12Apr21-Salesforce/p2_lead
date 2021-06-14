@@ -1,0 +1,42 @@
+<aura:component Implements="forceCommunity:availableForAllPageTypes, flexipage:availableForAllPageTypes, force:hasRecordId">
+
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"> </META>
+
+
+    <form class="wrapper" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+
+        <input type="hidden" name="orgid" value="00D5e000000HP5K" />
+        <input type="hidden" name="retURL" value="https://a39p2lead.force.com/SevenStones/s/web-to-case-confirmation" />
+        <div class="field-group">
+            <div class="row">
+                <div class="field-set">
+                    <label class="field-label" for="name">Contact Name</label>
+                    <input class="field" id="name" name="name" type="text" />
+                </div>
+                <div class="field-set">
+                    <label class="field-label" for="email">Email</label>
+                    <input class="field" id="email" name="email" type="email" required="true" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="field-set">
+                    <label class="field-label" for="phone">Phone</label>
+                    <input class="field" id="phone" name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+                </div>
+                <div class="field-set">
+                    <lagit bel class="field-label" for="subject">Subject</lagit>
+                    <input class="field" id="subject" name="subject" type="text" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="field-set">
+                    <label class="field-label desc" for="description">Description</label>
+                    <textarea class="field" name="description"></textarea>
+                </div>
+            </div>
+            <div class="row btn-row">
+                <input class="submit-btn" type="submit" name="submit" />
+            </div>
+        </div>
+    </form>
+</aura:component>

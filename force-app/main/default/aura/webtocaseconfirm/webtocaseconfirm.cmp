@@ -1,0 +1,3 @@
+<aura:component Implements="forceCommunity:availableForAllPageTypes, flexipage:availableForAllPageTypes, force:hasRecordId">
+    Thank you for submitting a case. An agent will be in touch in less than 24 hours.
+</aura:component>
