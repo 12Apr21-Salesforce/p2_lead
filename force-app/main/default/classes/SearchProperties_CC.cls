@@ -1,5 +1,5 @@
 public with sharing class SearchProperties_CC {
-
+    @AuraEnabled
 
     public String searchText {
         get {
@@ -24,7 +24,7 @@ public with sharing class SearchProperties_CC {
     public SearchProperties_CC() {
         searched=false;
     }
-
+    
     public List<Property__c> properties {
         get{
             if (setCon != null){
@@ -53,5 +53,32 @@ public with sharing class SearchProperties_CC {
             ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR, 'Search input must be 2 or more characters.'));
         }
     }
+   // @AuraEnabled
+    //public static List<Property__c> SearchProperties(String searchKey){
+    //     string searchText= + searchKey + '*';
+   //      List<Property__c> properties = [FIND :searchText
+   //                                     IN ALL FIELDS
+    //                                    RETURNING Property__c(Id, Name, Apartment_Name_r.Name, Street_Address__c, City__c)][0];
+   //     return properties;
+   // }
+    
+    @AuraEnabled
+    public static List<Property__c> findProperties(){
+        List<Property__c> propertylist = [select Id, Name, Apartment_Name__r.Name, Apartment_Name__c, Street_Address__c, City__c from Property__c];
+        return propertylist;
+    }
+    
+   // @AuraEnabled
+   // public static map<String,Object> getParentDetailsWithoutWrapper(){
+    //    map<String,Object> mapData = new map<String,Object>();
+     //   list<Property__c> listProp  = new list<Property__c>();
+    //        for(Property__c objProp : [Select Id, Name, Apartment_Name__r.Name, Street_Address__c, City__c
+    //                                  from Property__c ]){
+   //                   listProp.add(objProp);                                                 
+    //            
+   //         }
+  //      mapData.put('ParentDetails',JSON.serialize(listProp));
+   //     return mapData;
+  //  }
 
 }
