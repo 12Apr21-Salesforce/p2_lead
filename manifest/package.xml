@@ -50,6 +50,8 @@
 		<members>ChangePasswordController</members>
 		<members>ChangePasswordControllerTest</members>
 		<members>relatedPropertiesController</members>
+		<members>AgentListController_Test</members>
+		<members>AgentListController</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
@@ -314,19 +316,9 @@
 		<name>WorkflowFieldUpdate</name>
 	</types>
 	<types>
-        <members>SearchandSortProperty</members>
-        <members>SearchProperty</members>
-		<name>AuraDefinitionBundle</name>
-    </types>
-	<types>
 		<members>Property__c.Property Sold</members>
 		<name>WorkflowRule</name>
 	</types>
-	<types>
-                <members>SearchandSortProperty</members>
-                <members>SearchProperty</members>
-		<name>AuraDefinitionBundle</name>
-        </types>
 	<types>
 		<members>newApartment</members>
 		<members>newApartmentForm</members>
@@ -335,6 +327,10 @@
 		<members>recordCreated</members>
 		<members>unitCreated</members>
 		<members>quickCase</members>
+		<members>webtocase</members>
+		<members>webtocaseconfirm</members>
+		<members>sortProperty</members>
+		<members>NewClientPageAura</members>
 		<name>AuraDefinitionBundle</name>
 	</types>
 	<version>51.0</version>
