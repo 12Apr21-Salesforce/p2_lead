@@ -1,6 +1,6 @@
 ({
 	doInit : function(component, event, helper) {
-    var pageReference = component.get("v.pageReference");
+    //var pageReference = component.get("v.pageReference");
 
     component.set("v.Columns", [
     {label:"Name", fieldName:"Name", type:"text"},

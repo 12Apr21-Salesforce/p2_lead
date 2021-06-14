@@ -1,24 +1,21 @@
 ({
-    doInit : function(cmp, event, helper) {
-        //pageReference to AgentList Component
-        var navService = cmp.find("navService");
-        var pageReference = {
-            
-            "type": "standard__component",
-            "attributes": {
-                "componentName": "c__AgentList"    
-            }    
-        };
-        cmp.set("v.pageReference", pageReference);
-        var defaultUrl = "#";
-        navService.generateUrl(pageReference)
-        .then($A.getCallback(function(url) {
-            cmp.set("v.url", url ? url : defaultUrl);
-        }), $A.getCallback(function(error) {
-            cmp.set("v.url", defaultUrl);
-        }));
-    },
+    //init event for agent list retrieval
+    doInit : function(component, event, helper) {
+        component.set("v.Columns", [
+        {label:"Name", fieldName:"Name", type:"text"},
+        {label:"City", fieldName:"City", type:"text"},
+        {label:"State", fieldName:"State", type:"text"},
+        
+    ]);
+            var action = component.get("c.getContacts");
     
+        action.setCallback(this, function(data) {
+            component.set("v.Contacts", data.getReturnValue());
+        });
+        $A.enqueueAction(action);
+        },
+
+    //Functions for Client Form
     clickCreateClient : function(component, event, helper) {
 
     let fields = component.find("clientfields");
@@ -44,15 +41,52 @@
     else {
         
         component.find("Theinputform").submit();
-        helper.showHide(component);
         const toastEvent = $A.get("e.force:showToast");
         toastEvent.setParams({
             "message": "Client Added Successfully",
             "type": "success"
         });
         toastEvent.fire();
-        helper.handleNavigate(component, event, helper);
+        helper.clientFormTrueToggle(component, event, helper);
     }
+},
+
+handleSelect : function(component, event, helper) {
+    var selectedRows = event.getParam('selectedRows'); 
+    var setRows = [];
+    for ( var i = 0; i < selectedRows.length; i++ ) { 
+        setRows.push(selectedRows[i]);
+    }
+    component.set("v.selectedContacts", setRows); 
+     
+},
+
+//Functions for Agent List
+showSelectedAgents: function(component, event, helper) {
+    var records = component.get("v.selectedContacts");
+    if(records.length > 0){
+    for ( var i = 0; i < records.length; i++ ) {
+        alert(records[i].Name);
+    }
+    helper.agentListTrueToggle(component, event, helper);
+} else {
+    const toastEvent = $A.get("e.force:showToast");
+    toastEvent.setParams({
+        "message": "Select At Least One Agent",
+        "type": "error"
+    });
+    toastEvent.fire();
+    }
+},
+
+selectNewAgents: function(component, event, helper){
+    helper.agentListTrueToggle(component, event, helper);
+    component.set("v.selectedContacts", []);
+},
+
+addAnotherAgents: function(component, event, helper){
+    helper.agentListTrueToggle(component, event, helper);
+    helper.clientFormTrueToggle(component, event, helper);
 }
 
 })

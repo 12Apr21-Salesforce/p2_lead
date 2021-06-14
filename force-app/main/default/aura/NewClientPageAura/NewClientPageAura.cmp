@@ -1,9 +1,13 @@
-<aura:component implements="flexipage:availableForRecordHome, forceCommunity:availableForAllPageTypes, 
+<aura:component controller="AgentListController" 
+                implements="flexipage:availableForRecordHome, forceCommunity:availableForAllPageTypes, 
                 force:appHostable, force:hasRecordId"
                 access="global">
-    <lightning:navigation aura:id="navService"/>
+    <!--<lightning:navigation aura:id="navService"/>
     <aura:attribute name="pageReference" type="Object"/>
-    <aura:attribute name="url" type="String"/>
+    <aura:attribute name="url" type="String"/>-->
+     <!--CLIENT FORM ATTRIBUTES-->
+    <aura:attribute name="checkClientFormTrue" type="Boolean" default="true" />
+    <aura:attribute name="checkAgentListTrue" type="Boolean" default="true" />
     <aura:attribute name="clients" type="Client__c[]" />
     <aura:attribute name="newClient" type="Client__c" default="{'Name':'',
                                                                    'Client_Email__c': '',
@@ -11,8 +15,19 @@
                                                                    'Client_Status__c':'',
                                                                    'Funding_Status__c': '',
                                                                    'sobjectType':'Client__c'}"/>
-    <aura:handler name="init" value="{! this }" action="{! c.doInit }"/>
-                                                          
+    <!--<aura:handler name="init" value="{! this }" action="{! c.doInit }"/>-->
+    <!--CLIENT FORM ATTRIBUTES-->
+
+<!--AGENT LIST ATTRIBUTES/HANDLER-->
+<aura:attribute name="recordId" type="Id" />
+<aura:attribute name="Contacts" type="Contact[]" />
+<aura:attribute name="Columns" type="List" />
+<aura:attribute name="selectedContacts" type="List" />
+<aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+<!--AGENT LIST ATTRIBUTES/HANDLER-->
+
+    <!--SHOW CLIENT FORM-->    
+    <aura:if isTrue="{!v.checkClientFormTrue}">                                              
     <div aura:id="Theclientform"  class="slds-col slds-col_padded slds-p-top_large">
         <div aria-labelledby="newClientForm">
             <fieldset class="slds-box slds-theme_default slds-container_small">
@@ -34,5 +49,53 @@
                 </fieldset>
         </div>
     </div>
+    <!--ELSE SHOW AGENT LIST-->
+    <aura:set attribute="else">
+    <!--Hide agent contact info-->
+    <aura:if isTrue="{!v.checkAgentListTrue}">
+        <force:recordData aura:id="contactRecord"               
+                  targetFields="{!v.Contacts}"
+                  layoutType="FULL"
+                  />
+                  <!--Show-->
+<lightning:card class="slds-card__body_inner" aura:id="Theagentlist" iconName="standard:contact" title="{! 'Available Agents'}">
+   <lightning:datatable data="{! v.Contacts }" 
+                        columns="{! v.Columns }"
+                        keyField="Id"
+                        onrowselection="{!c.handleSelect}"/>
+
+   <lightning:button   label="View Selected Agent"
+                        class="slds-m-top_medium"
+                        variant="brand"
+                        onclick="{!c.showSelectedAgents}"/>                    
+</lightning:card>
+    <aura:set attribute="else">
+    <div aura:id="Theclientform"  class="slds-col slds-col_padded slds-p-top_large">
+        <div aria-labelledby="newClientForm">
+            <fieldset class="slds-box slds-theme_default slds-container_medium">
+                <legend id="newClientForm" class="slds-text-heading_small
+                                                    slds-var-p-vertical_medium">
+                Agent Contact Information
+                </legend>    
+                <aura:iteration items="{!v.selectedContacts}" var="agent">
+                 <p> Name:&nbsp;{!agent.Name}&nbsp;&nbsp;  
+                     Phone:&nbsp;{!agent.Phone}&nbsp;&nbsp;     
+                     Email:&nbsp;{!agent.Email}&nbsp;
+                </p>
+                </aura:iteration>
+
+                <lightning:button   label="Select New Agents"
+                class="slds-m-top_medium"
+                variant="brand"
+                onclick="{!c.selectNewAgents}"/>
+                </fieldset> 
+                
+        </div>
+    </div>
+    </aura:set>
+    </aura:if>
+
+    </aura:set>
+    </aura:if>  
 </aura:component>
 
