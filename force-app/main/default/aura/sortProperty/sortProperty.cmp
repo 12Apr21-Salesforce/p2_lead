@@ -10,15 +10,16 @@
     
     <lightning:layout class="slds-page-header slds-page-header_object-home">
         <lightning:layoutItem>
-            <lightning:icon iconName="standard:scan_card" alternativeText="My Search"/>
+            <lightning:icon iconName="standard:scan_card" alternativeText="My Search" />
         </lightning:layoutItem>
         <lightning:layoutItem padding="horizontal-small">
             <div class="page-section page-header">
-                <h1 class="slds-text-heading_label">Search Available Property </h1>   
+                <h1 class="slds-text-heading_label">Search Available Property </h1>
             </div>
         </lightning:layoutItem>
     </lightning:layout>
-    <lightning:layout>
+    
+      <lightning:layout>
         <lightning:layoutItem padding="around-small" size="12">
             <div aria-labelledby="newexpenseform">
                 <!-- BOXED AREA -->
@@ -27,26 +28,25 @@
                                                        slds-p-vertical_medium">
                         Your Dream House is Here!!
                     </legend>
-                  <lightning:input type="text" name="searchKey" label="Enter" aura:id="searchKey" onchange="{!c.searchKeyChange}" placeholder="Search" size="10" /> 
-
+                    <lightning:input type="text" name="searchKey" label="Enter" aura:id="searchKey"
+                        onchange="{!c.searchKeyChange}" placeholder="Search" size="10" />
                 </fieldset>
-                         
             </div>
         </lightning:layoutItem>
     </lightning:layout>
-    <div>
+    
+	 <div>
     <lightning:layout multipleRows="true" horizontalAlign="center">
         <lightning:layoutItem padding="around-small" size="12">
             <lightning:datatable keyField="id" 
                                  data="{!v.PropertyList}"
                                  columns="{!v.columns}"
-                                 hideCheckboxColumn="true" 
+                                 hideCheckboxColumn="true"
                                  defaultSortDirection="{!v.defaultSortDirection}"
-                                 sortedDirection="{!v.sortDirection}"
-                                 sortedBy="{!v.sortedBy}"
+                                 sortedDirection="{!v.sortDirection}" 
+                                 sortedBy="{!v.sortedBy}" 
                                  onsort="{!c.handleSort}"/>
         </lightning:layoutItem>
     </lightning:layout>
     </div>
-    
 </aura:component>
