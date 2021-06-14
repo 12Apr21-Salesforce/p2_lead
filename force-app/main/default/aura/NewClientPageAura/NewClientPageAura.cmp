@@ -56,7 +56,7 @@
         <force:recordData aura:id="contactRecord"               
                   targetFields="{!v.Contacts}"
                   layoutType="FULL"/>
-                  
+
 <lightning:card class="slds-card__body_inner" aura:id="Theagentlist" iconName="standard:contact" title="{! 'Available Agents'}">
    <lightning:datatable data="{! v.Contacts }" 
                         columns="{! v.Columns }"
@@ -93,8 +93,7 @@
                 class="slds-m-top_medium"
                 variant="brand"
                 onclick="{!c.addAnotherAgents}"/>
-                </fieldset>
-                
+                </fieldset>  
         </div>
     </div>
     </aura:set>
