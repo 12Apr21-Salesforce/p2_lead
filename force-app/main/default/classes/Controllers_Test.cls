@@ -9,12 +9,15 @@ private class Controllers_Test {
         Integer a = 1;
         Integer p = 5;
 
-        Apartment__c apt = new Apartment__c(Name='Apartment1',Total_SqFt_of_the_Building__c=10000, Total_No_Of_Units__c=p,Cost_of_Building__c=12345);
+        Apartment__c apt1 = new Apartment__c(Name='Apartment1',Total_SqFt_of_the_Building__c=10000, Total_No_Of_Units__c=p,Cost_of_Building__c=12345);
 
-        insert apt;
+        insert apt1;
+        Apartment__c apt2 = new Apartment__c(Name='Apartment2',Total_SqFt_of_the_Building__c=20000, Total_No_Of_Units__c=p,Cost_of_Building__c=23456);
+
+        insert apt2;
         
         for (Integer i=0 ; i<p ; i++){
-            Property__c prop = new Property__c(Apartment_Name__c=apt.Id, Property_ID__c='AA00'+i, 
+            Property__c prop = new Property__c(Apartment_Name__c=apt1.Id, Property_ID__c='AA00'+i, 
             Name='Property'+i,Unit_Type__c='Loft',Status__c='Available',Area_in_SqFt__c=12345);
 
             propList.add(prop);
@@ -63,6 +66,12 @@ private class Controllers_Test {
 
         // System.assertEquals(0, count, 'ERROR: at least one property not searched');
         
+    }
+    @IsTest
+    static void searchPropertiesTest(){
+       List<Property__c> proplist= SearchProperties_CC.findProperties();
+       System.assertEquals(5,proplist.size());
+       System.assertEquals('Property0',proplist[0].Name);
     }
 }
 
