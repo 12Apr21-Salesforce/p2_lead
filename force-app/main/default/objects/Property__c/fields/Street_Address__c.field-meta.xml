@@ -3,11 +3,7 @@
     <fullName>Street_Address__c</fullName>
     <externalId>false</externalId>
     <label>Street Address</label>
-    <length>200</length>
-    <required>false</required>
-    <trackFeedHistory>false</trackFeedHistory>
-    <trackHistory>false</trackHistory>
+    <required>true</required>
     <trackTrending>false</trackTrending>
-    <type>Text</type>
-    <unique>false</unique>
+    <type>TextArea</type>
 </CustomField>

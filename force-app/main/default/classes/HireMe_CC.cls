@@ -2,9 +2,7 @@ public with sharing class HireMe_CC {
 
     // look at sending pagerefe to this function to cut down on repeat code methods, abstract out the one change
     public Boolean DisplayConfirm {get;set;}
-    public Boolean DisplayConfirm2 {get;set;}
-
-    
+    public Boolean DisplayConfirm2 {get;set;}    
      
     public Contact neuHire{
         get{
@@ -29,19 +27,15 @@ public with sharing class HireMe_CC {
         set;
     }
     public ApexPages.StandardController c1 = new  ApexPages.StandardController(neuHire);
-    public ApexPages.StandardController c2 = new  ApexPages.StandardController(nCase);
+    public ApexPages.StandardController c2 = new  ApexPages.StandardController(nCase);    
     
-    
-    public PageReference saveC1(){
-
-       
+    public PageReference saveC1(){       
         c1.save();
         DisplayConfirm = true;
         PageReference newPage = Page.HireMePage;
         newPage.setRedirect(false);
 
         return newPage;
-
     }
 
     public PageReference saveC2(){
@@ -52,8 +46,6 @@ public with sharing class HireMe_CC {
         DisplayConfirm2 = true;
         PageReference newPage = Page.HireMePage;
         newPage.setRedirect(false);
-
         return newPage;
-
     }
 }
