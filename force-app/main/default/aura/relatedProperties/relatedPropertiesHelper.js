@@ -10,7 +10,7 @@
             if (state === "SUCCESS") {
                 // getCount(cmp, aptId)
                 let records = response.getReturnValue()
-                records.forEach(function(record){
+                records.forEach(function(record) {
                     // console.log('List here: '+ record.Id)
                     // console.log(cmp.get('v.propertyList'))
                     record.linkName = '/' + record.Id
@@ -20,14 +20,14 @@
                     $A.util.removeClass(relatedList, "slds-hide");
                 }
                 cmp.set('v.propertyList', records)
-                // console.log('Final List: '+ JSON.stringify(cmp.get('v.propertyList')))
+                    // console.log('Final List: '+ JSON.stringify(cmp.get('v.propertyList')))
             } else {
-                console.error('is it me'+state)
+                console.error('is it me' + state)
             }
         })
         $A.enqueueAction(action)
-        // $A.enqueueAction(action);
-        //  component.get('v.propertyList')
+            // $A.enqueueAction(action);
+            //  component.get('v.propertyList')
     },
     getCount: function(cmp, aptId) {
         let action = cmp.get('c.getRelatedPropertyCount')
@@ -36,10 +36,10 @@
         })
         action.setCallback(this, function(response) {
             let state = response.getState()
-            console.log(state)
+                // console.log(state)
             if (state === "SUCCESS") {
                 let count = response.getReturnValue()
-                console.log(count)
+                    // console.log(count)
                 cmp.set('v.unitCount', count)
             }
         })

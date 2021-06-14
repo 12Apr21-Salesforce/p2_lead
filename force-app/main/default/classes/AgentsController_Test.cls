@@ -18,7 +18,7 @@ private class AgentsController_Test {
         
         // Get the list of ContactWrapper elements
         List<AgentsController.ContactWrapper> contactWrappers = ac.agentList;
-        System.debug(contactWrappers);
+        // System.debug(contactWrappers);
         
         // Modify the list by selecting all the elements with a check in the boxes
         for (AgentsController.ContactWrapper wrapper : contactWrappers) {
@@ -67,7 +67,7 @@ private class AgentsController_Test {
         
         // Get the list of ContactWrapper elements
         List<AgentsController.ContactWrapper> contactWrappers = ac.agentList;
-        System.debug(contactWrappers);
+        // System.debug(contactWrappers);
         
         // Modify the list by selecting all the elements with a check in the boxes
         for (AgentsController.ContactWrapper wrapper : contactWrappers) {
