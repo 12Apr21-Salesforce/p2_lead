@@ -87,7 +87,13 @@
                 class="slds-m-top_medium"
                 variant="brand"
                 onclick="{!c.selectNewAgents}"/>
-                </fieldset> 
+        
+                
+                <lightning:button   label="Add New Client"
+                class="slds-m-top_medium"
+                variant="brand"
+                onclick="{!c.addAnotherAgents}"/>
+                </fieldset>
                 
         </div>
     </div>
