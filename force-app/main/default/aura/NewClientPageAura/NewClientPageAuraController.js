@@ -65,10 +65,8 @@ handleSelect : function(component, event, helper) {
 showSelectedAgents: function(component, event, helper) {
     var records = component.get("v.selectedContacts");
     if(records.length > 0){
-    for ( var i = 0; i < records.length; i++ ) {
-        alert(records[i].Name);
-    }
     helper.agentListTrueToggle(component, event, helper);
+
 } else {
     const toastEvent = $A.get("e.force:showToast");
     toastEvent.setParams({
