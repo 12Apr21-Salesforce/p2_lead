@@ -4,7 +4,6 @@
         $A.util.toggleClass(hero, "slds-hide");
     },
 
-
     clientFormTrueToggle : function(component, event, helper) {
         component.set("v.checkClientFormTrue", !component.get("v.checkClientFormTrue"));
     },
