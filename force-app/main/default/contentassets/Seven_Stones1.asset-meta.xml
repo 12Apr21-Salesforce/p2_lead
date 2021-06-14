@@ -3,6 +3,7 @@
     <isVisibleByExternalUsers>false</isVisibleByExternalUsers>
     <language>en_US</language>
     <masterLabel>Seven_Stones1</masterLabel>
+    <originNetwork>sevenstones</originNetwork>
     <relationships>
         <workspace>
             <access>INFERRED</access>
