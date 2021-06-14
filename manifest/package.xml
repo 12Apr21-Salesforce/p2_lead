@@ -49,6 +49,7 @@
 		<members>LightningSelfRegisterControllerTest</members>
 		<members>ChangePasswordController</members>
 		<members>ChangePasswordControllerTest</members>
+		<members>Join_Our_Team_CC</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
@@ -314,6 +315,15 @@
 	<types>
 		<members>Property__c.Property Sold</members>
 		<name>WorkflowRule</name>
+	</types>
+	<types>
+		<members>addCandidateEvent</members>
+		<members>Agent_Application</members>
+		<members>harnessApp</members>
+		<members>newHireForm</members>
+		<members>newHireHeader</members>
+		<members>newHireListAgent</members>
+		<name>AuraDefinitionBundle</name>
 	</types>
 	<version>51.0</version>
 </Package>
