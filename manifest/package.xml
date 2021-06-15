@@ -314,8 +314,7 @@
 		<name>WorkflowFieldUpdate</name>
 	</types>
 	<types>
-        <members>SearchandSortProperty</members>
-        <members>SearchProperty</members>
+        <members>sortProperty</members>
 		<name>AuraDefinitionBundle</name>
     </types>
 	<types>
