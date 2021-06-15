@@ -13,7 +13,7 @@
     });
         $A.enqueueAction(action); 
     } */
-    handleEvent : function(cmp, event, helper) {
+/*     handleEvent : function(cmp, event, helper) {
         cmp.set('v.contactId', event.getParam('contactId'))
         console.log("Here Now: " + cmp.get('v.contactId'))
         helper.getCount(cmp, event.getParam('contactId'))
@@ -28,5 +28,5 @@
         ])
         helper.doInit(cmp, event)
         helper.getCount(cmp, cmp.get('v.contactId'))
-    }
+    } */
 })
