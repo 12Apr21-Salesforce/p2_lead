@@ -1,6 +1,9 @@
 # Seven Stones Property - Alchemy
+![header-image](https://imgur.com/NUFYtq4.png)  
+Taking over another team's project, the current team is tasked with converting a prior visualforce experience site into a new experience based on the Lightning Aura Component Framework, as well as add new features utilizing the same toolset. Teams must review and update documentation, meet with clients to ensure project priorities, and leverage their knowledge of both Visualforce and Lightning Aura Components to successfully convert existing features and implement new ones.
 
-placeholder
+[Vanquish - Seven Stones](https://github.com/12Apr21-Salesforce/Vanquish_Code-Sourcerers_Project-1)  
+
 
 ##  Getting Started / Installations
 [Git](https://git-scm.com/downloads)  
