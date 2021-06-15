@@ -1,77 +1,100 @@
 .THIS.wrapper {
-    display: flex;
+    min-height: 70vh;
+    max-width: 70vw;
     margin: 0 auto;
-    /* width: 100%; */
 }
 
-.THIS .field-group {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-.THIS .row {
-    display: flex;
-    flex-direction: row;
+.THIS .header {
+    font-size: 4.5rem;
     text-align: center;
-    gap: 1em;
+    margin: 2rem 0 4rem 0;
 }
 
-.THIS .field-set {
-    display: flex;
+.THIS .contactForm {
+    height: 100%;
     width: 100%;
-    flex-direction: column;
-    gap: 0.2em;
 }
 
-.THIS .field .field-label {
-    width: inherit;
+.THIS .formBox {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
 }
 
-.THIS .field-label {
-    font-size: 1.3rem;
-    text-align: left;
+.THIS .inputBox {
+    position: relative;
+    margin: 0 0 35px 0;
 }
 
-.THIS .desc {}
-
-.THIS input.field {
-    min-height: 40px;
-    min-width: 250px;
-    border: 2px solid rgb(5, 115, 159);
-    font-size: 1rem;
-    font-size: 1.3rem;
+.THIS .w50 {
+    width: 47%;
 }
 
-.THIS textarea.field {
-    font-size: 1.3rem;
-    border: 2px solid rgb(5, 115, 159);
-    min-height: 200px;
+.THIS .w100 {
+    width: 100%;
+}
+
+.THIS input,
+.THIS textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    /*rgb(5, 115, 159);*/
+    border: none;
+    border-bottom: 1px solid #777;
+    outline: none;
     resize: none;
 }
 
-.THIS .field:focus {
-    outline: none;
-    box-shadow: 0px 0px 2px #0066ff;
+.THIS textarea {
+    min-height: 120px;
 }
 
-.THIS .btn-row {
-    width: 70%;
-    margin: 0 auto;
+.THIS span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    transition: 0.5s;
+    pointer-events: none;
 }
 
-.THIS .submit-btn {
-    font-size: 1.3rem;
-    min-width: 100%;
-    border: 2px solid white;
-    background-color: rgb(5, 115, 159);
-    color: white;
-    transition: 0.3s;
+.THIS input:focus~span,
+.THIS textarea:focus~span,
+.THIS input:not(:placeholder-shown)~span,
+.THIS textarea:not(:placeholder-shown)~span {
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ff568c;
 }
 
-.THIS .submit-btn:hover {
+.THIS input:valid~span,
+.THIS textarea:valid~span {
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
     color: rgb(5, 115, 159);
-    background-color: white;
-    border: 2px solid rgb(5, 115, 159);
+}
+
+.THIS input[type="submit"] {
+    position: relative;
+    cursor: pointer;
+    background: #0f3959;
+    color: #fff;
+    border: none;
+    max-width: 150px;
+    padding: 12px;
+}
+
+.THIS input[type="submit"]:hover {
+    background: rgb(5, 115, 159);
 }

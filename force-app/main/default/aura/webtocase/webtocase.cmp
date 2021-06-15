@@ -5,36 +5,32 @@
 
     <form class="wrapper" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
 
+        <div class="header">Get in touch with us</div>
         <input type="hidden" name="orgid" value="00D5e000000HP5K" />
         <input type="hidden" name="retURL" value="https://a39p2lead.force.com/SevenStones/s/web-to-case-confirmation" />
-        <div class="field-group">
-            <div class="row">
-                <div class="field-set">
-                    <label class="field-label" for="name">Contact Name</label>
-                    <input class="field" id="name" name="name" type="text" />
+        <div class="contactForm">
+            <div class="formBox">
+                <div class="inputBox w50">
+                    <input class="field" placeholder=" " id="name" name="name" type="text" required="true" />
+                    <span>Contact</span>
                 </div>
-                <div class="field-set">
-                    <label class="field-label" for="email">Email</label>
-                    <input class="field" id="email" name="email" type="email" required="true" />
+                <div class="inputBox w50">
+                    <input class="field" placeholder=" " id="phone" name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required="true" />
+                    <span>Phone</span>
                 </div>
-            </div>
-            <div class="row">
-                <div class="field-set">
-                    <label class="field-label" for="phone">Phone</label>
-                    <input class="field" id="phone" name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
+                <div class="inputBox w50">
+                    <input class="field" placeholder=" " id="email" name="email" type="email" required="true" />
+                    <span>Email</span>
                 </div>
-                <div class="field-set">
-                    <label class="field-label" for="subject">Subject</label>
-                    <input class="field" id="subject" name="subject" type="text" />
+                <div class="inputBox w50">
+                    <input class="field" placeholder=" " id="subject" name="subject" type="text" required="true" />
+                    <span>Subject</span>
                 </div>
-            </div>
-            <div class="row">
-                <div class="field-set">
-                    <label class="field-label desc" for="description">Description</label>
-                    <textarea class="field" name="description"></textarea>
+                <div class="inputBox w100">
+                    <textarea class="field" placeholder=" " name="description" required="true"></textarea>
+                    <span>Description</span>
                 </div>
-            </div>
-            <div class="row btn-row">
+                <i>Please fill out the complete form for us to better assist you.</i>
                 <input class="submit-btn" type="submit" name="submit" />
             </div>
         </div>
