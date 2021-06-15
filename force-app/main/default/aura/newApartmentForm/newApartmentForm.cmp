@@ -1,4 +1,4 @@
-<aura:component implements="force:hasRecordId, forceCommunity:availableForAllPageTypes" access="global">
+<aura:component implements="force:hasRecordId" access="global">
     <aura:attribute name="apartment" type="Apartment__c"></aura:attribute>
     <aura:attribute name="apartments" type="Apartment__c[]"></aura:attribute>
     <aura:attribute name="apartmentMap" type="Map"></aura:attribute>
