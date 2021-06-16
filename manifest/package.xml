@@ -50,6 +50,9 @@
 		<members>ChangePasswordController</members>
 		<members>ChangePasswordControllerTest</members>
 		<members>Join_Our_Team_CC</members>
+		<members>relatedPropertiesController</members>
+		<members>AgentListController_Test</members>
+		<members>AgentListController</members>
 		<name>ApexClass</name>
 	</types>
 	<types>
@@ -159,6 +162,7 @@
 		<members>Property__c.Zip_Code__c</members>
 		<name>CustomField</name>
 	</types>
+	
 	<types>
 		<members>Apartment__c</members>
 		<members>Client__c</members>
@@ -323,6 +327,17 @@
 		<members>newHireForm</members>
 		<members>newHireHeader</members>
 		<members>newHireListAgent</members>
+		<members>newApartment</members>
+		<members>newApartmentForm</members>
+		<members>newUnitForm</members>
+		<members>relatedProperties</members>
+		<members>recordCreated</members>
+		<members>unitCreated</members>
+		<members>quickCase</members>
+		<members>webtocase</members>
+		<members>webtocaseconfirm</members>
+		<members>sortProperty</members>
+		<members>NewClientPageAura</members>
 		<name>AuraDefinitionBundle</name>
 	</types>
 	<version>51.0</version>

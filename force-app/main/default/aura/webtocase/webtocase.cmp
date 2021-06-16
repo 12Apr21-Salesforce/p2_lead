@@ -1,0 +1,38 @@
+<aura:component Implements="forceCommunity:availableForAllPageTypes, flexipage:availableForAllPageTypes, force:hasRecordId">
+
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"> </META>
+
+
+    <form class="wrapper" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+
+        <div class="header">Get in touch with us</div>
+        <input type="hidden" name="orgid" value="00D5e000000HP5K" />
+        <input type="hidden" name="retURL" value="https://a39p2lead.force.com/SevenStones/s/web-to-case-confirmation" />
+        <div class="contactForm">
+            <div class="formBox">
+                <div class="inputBox w50">
+                    <input class="field" placeholder=" " id="name" name="name" type="text" required="true" />
+                    <span>Contact</span>
+                </div>
+                <div class="inputBox w50">
+                    <input class="field" placeholder=" " id="phone" name="phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required="true" />
+                    <span>Phone</span>
+                </div>
+                <div class="inputBox w50">
+                    <input class="field" placeholder=" " id="email" name="email" type="email" required="true" />
+                    <span>Email</span>
+                </div>
+                <div class="inputBox w50">
+                    <input class="field" placeholder=" " id="subject" name="subject" type="text" required="true" />
+                    <span>Subject</span>
+                </div>
+                <div class="inputBox w100">
+                    <textarea class="field" placeholder=" " name="description" required="true"></textarea>
+                    <span>Description</span>
+                </div>
+                <i>Please fill out the complete form for us to better assist you.</i>
+                <input class="submit-btn" type="submit" name="submit" />
+            </div>
+        </div>
+    </form>
+</aura:component>

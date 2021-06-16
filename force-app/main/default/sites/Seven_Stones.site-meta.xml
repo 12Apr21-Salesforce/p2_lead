@@ -22,8 +22,8 @@
     <referrerPolicyOriginWhenCrossOrigin>true</referrerPolicyOriginWhenCrossOrigin>
     <requireHttps>true</requireHttps>
     <selfRegPage>CommunitiesSelfReg</selfRegPage>
-    <siteAdmin>diego.maquill@brave-koala-ji0m4.com</siteAdmin>
-    <siteGuestRecordDefaultOwner>diego.maquill@brave-koala-ji0m4.com</siteGuestRecordDefaultOwner>
+    <siteAdmin>wyang19a@empathetic-unicorn-o2aquf.com</siteAdmin>
+    <siteGuestRecordDefaultOwner>wyang19a@empathetic-unicorn-o2aquf.com</siteGuestRecordDefaultOwner>
     <siteType>ChatterNetwork</siteType>
     <subdomain>7stonessite-developer-edition</subdomain>
     <urlPathPrefix>SevenStones</urlPathPrefix>

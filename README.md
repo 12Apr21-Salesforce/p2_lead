@@ -1,6 +1,9 @@
 # Seven Stones Property - Alchemy
+![header-image](https://imgur.com/NUFYtq4.png)  
+Taking over another team's project, the current team is tasked with converting a prior visualforce experience site into a new experience based on the Lightning Aura Component Framework, as well as add new features utilizing the same toolset. Teams must review and update documentation, meet with clients to ensure project priorities, and leverage their knowledge of both Visualforce and Lightning Aura Components to successfully convert existing features and implement new ones.
 
-placeholder
+[Vanquish - Seven Stones](https://github.com/12Apr21-Salesforce/Vanquish_Code-Sourcerers_Project-1)  
+
 
 ##  Getting Started / Installations
 [Git](https://git-scm.com/downloads)  
@@ -17,23 +20,23 @@ placeholder
 ##### If you are deploying to an existing org with `Digital Experience` and `ExperienceBundle Metadata API` already enabled, SKIP TO STEP 12.
 8. From your org on your browser, navigate to `Setup` > `Lightning Experience Transition Assistant` > `Feature Settings` > `Digital Experiences` > `Settings`  
 8. Check `Enable Digital Experiences` and give it a random domain name, click `Save`.  
-![instruction1](https://imgur.com/50ixCpu.png)
+![instruction](https://imgur.com/50ixCpu.png)
 9. Navigate back to `Setup` > `Lightning Experience Transition Assistant` > `Feature Settings` > `Digital Experiences` > `Settings`.  
-![instruction1](https://imgur.com/BkYSdPC.png)
+![instruction](https://imgur.com/BkYSdPC.png)
 10. Check `Enable ExperienceBundle Metadata API`.  
 11. Go back to Visual Studio, search entire project with `Ctrl`/`Command` + `Shift` + `F`.  
-![instruction1](https://imgur.com/OZUMX07.png)
-12. Copy `diego.maquill@brave-koala-ji0m4.com` and paste it in.
+![instruction](https://imgur.com/OZUMX07.png)
+12. Copy `wyang19a@empathetic-unicorn-o2aquf.com` and paste it in.
 11. Go back to browser, navigate to `Setup` > `Users` > `Users`.
 12. Copy your own system admin username.   
-![instruction1](https://imgur.com/ILgD8yh.png)
+![instruction](https://imgur.com/ILgD8yh.png)
 13. Go back to Visual Studio Code, click the arrow on the left side of search textbox.  
-![instruction1](https://imgur.com/pYcbvcF.png)
+![instruction](https://imgur.com/pYcbvcF.png)
 
 14. Replace all instances by clicking the `Replace all` button on the right side.
 15. Once authorization is successful, deploy by running `sfdx force:source:deploy -x manifest/package.xml` or by right clicking on manifest/package.xml and choosing `Deploy Source in Manifest to Org`
 16. Navigate to `Setup` > `Lightning Experience Transition Assistant` > `Feature Settings` > `Digital Experiences` > `All Sites`.  
-![instruction1](https://imgur.com/sQtx9ia.png)
+![instruction](https://imgur.com/sQtx9ia.png)
 17. Click Builder, and publish the experience cloud site.
 
 

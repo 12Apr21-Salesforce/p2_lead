@@ -11,7 +11,7 @@ public class NewPropertyPage{
     }
     public PageReference saveButton(){
         insert newProp;
-        System.debug(newProp);
+        // System.debug(newProp);
         PageReference pr = new PageReference('/apex/PropRecordPage?&id='+newProp.Id);
         pr.setRedirect(true);
         return pr;

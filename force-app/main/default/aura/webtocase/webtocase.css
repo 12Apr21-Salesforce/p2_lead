@@ -1,0 +1,100 @@
+.THIS.wrapper {
+    min-height: 70vh;
+    max-width: 70vw;
+    margin: 0 auto;
+}
+
+.THIS .header {
+    font-size: 4.5rem;
+    text-align: center;
+    margin: 2rem 0 4rem 0;
+}
+
+.THIS .contactForm {
+    height: 100%;
+    width: 100%;
+}
+
+.THIS .formBox {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+}
+
+.THIS .inputBox {
+    position: relative;
+    margin: 0 0 35px 0;
+}
+
+.THIS .w50 {
+    width: 47%;
+}
+
+.THIS .w100 {
+    width: 100%;
+}
+
+.THIS input,
+.THIS textarea {
+    width: 100%;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    /*rgb(5, 115, 159);*/
+    border: none;
+    border-bottom: 1px solid #777;
+    outline: none;
+    resize: none;
+}
+
+.THIS textarea {
+    min-height: 120px;
+}
+
+.THIS span {
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #333;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.THIS input:focus~span,
+.THIS textarea:focus~span,
+.THIS input:not(:placeholder-shown)~span,
+.THIS textarea:not(:placeholder-shown)~span {
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ff568c;
+}
+
+.THIS input:valid~span,
+.THIS textarea:valid~span {
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: rgb(5, 115, 159);
+}
+
+.THIS input[type="submit"] {
+    position: relative;
+    cursor: pointer;
+    background: #0f3959;
+    color: #fff;
+    border: none;
+    max-width: 150px;
+    padding: 12px;
+}
+
+.THIS input[type="submit"]:hover {
+    background: rgb(5, 115, 159);
+}

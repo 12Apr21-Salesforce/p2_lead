@@ -26,11 +26,11 @@ public class Triggers_Demo {
 		//Queyring the property values which are linked to customers whose stage is Closed
         List<Property__c> prop = [SELECT id FROM Property__c WHERE 
                         id in (SELECT Property_interested_in__c FROM Customers__c where Id IN :Trigger.New)];
-         System.debug('property size ' +prop.size());		
+        //  System.debug('property size ' +prop.size());		
         //checking for the closed customers with the linked properties and updating the property's status to Sold
         for(Customers__c custClosed : cust){
             if(custClosed.Stage__c=='Closed'){
-				System.debug('entering');
+				// System.debug('entering');
                 for(Property__c propSold : prop){
                     if(propSold.id == custClosed.Property_Interested_In__c){
                         propSold.Status__c = 'Sold';
