@@ -3,7 +3,7 @@
     <allowInternalUserLogin>false</allowInternalUserLogin>
     <allowMembersToFlag>true</allowMembersToFlag>
     <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
-    <communityRoles/>
+    <communityRoles />
     <disableReputationRecordConversations>false</disableReputationRecordConversations>
     <emailSenderAddress>wyang19a@empathetic-unicorn-o2aquf.com</emailSenderAddress>
     <emailSenderName>Seven Stones</emailSenderName>
@@ -27,10 +27,10 @@
     <forgotPasswordTemplate>unfiled$public/CommunityForgotPasswordEmailTemplate</forgotPasswordTemplate>
     <gatherCustomerSentimentData>false</gatherCustomerSentimentData>
     <networkMemberGroups>
-        <permissionSet>SS_Create_Apartments</permissionSet>
         <permissionSet>SS_Create_Units</permissionSet>
-        <profile>Admin</profile>
+        <permissionSet>SS_Create_Apartments</permissionSet>
         <profile>SS Users</profile>
+        <profile>Admin</profile>
     </networkMemberGroups>
     <networkPageOverrides>
         <changePasswordPageOverrideSetting>Standard</changePasswordPageOverrideSetting>

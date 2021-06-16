@@ -5,7 +5,7 @@
   "id" : "016a26e9-1249-4c66-92d5-8b969c78c3a0",
   "label" : "Client Detail",
   "objectApiName" : "Client__c",
-  "routeType" : "detail-a0I",
+  "routeType" : "detail-a01",
   "type" : "route",
   "urlPrefix" : "client"
 }

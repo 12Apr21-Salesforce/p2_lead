@@ -1,0 +1,17 @@
+<aura:component >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="candidate" type="Contact"/>
+    <lightning:card title="{!v.candidate.Name}" iconName="standard:goal">        
+          <p>First Name:<lightning:formattedText value="{!v.candidate.FirstName}"/></p>
+          <p>Last Name:<lightning:formattedText value="{!v.candidate.LastName}" /></p>
+          <p>Email:<lightning:formattedEmail value="{!v.candidate.Email}" /></p>
+          <p>Phone:<lightning:formattedPhone value="{!v.candidate.Phone}"/></p>
+    <!--       <p>
+            <lightning:input type="toggle"                            
+                         label="Packed?"                           
+                         name="Packed"                         
+                         checked="{!v.candidate.Packed__c}" />
+          </p> -->
+     <!--      <lightning:button label="Packed!" onclick="{!c.packItem}"/> -->
+     </lightning:card>>
+</aura:component>

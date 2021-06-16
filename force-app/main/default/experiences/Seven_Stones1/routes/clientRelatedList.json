@@ -5,7 +5,7 @@
   "id" : "681f3e68-e9d7-4b8f-b054-3e69779cd718",
   "label" : "Client Related List",
   "objectApiName" : "Client__c",
-  "routeType" : "relatedlist-a0I",
+  "routeType" : "relatedlist-a01",
   "type" : "route",
   "urlPrefix" : "client"
 }

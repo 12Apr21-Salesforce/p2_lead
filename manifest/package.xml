@@ -49,6 +49,7 @@
 		<members>LightningSelfRegisterControllerTest</members>
 		<members>ChangePasswordController</members>
 		<members>ChangePasswordControllerTest</members>
+		<members>Join_Our_Team_CC</members>
 		<members>relatedPropertiesController</members>
 		<members>AgentListController_Test</members>
 		<members>AgentListController</members>
@@ -225,7 +226,7 @@
 	</types>
 	<types>
 		<members>Default_User_Profile_Menu</members>
-		<members>Default_Navigation1</members>
+		<!--<members>Default_Navigation1</members>-->
 		<name>NavigationMenu</name>
 	</types>
 	<types>
@@ -320,6 +321,12 @@
 		<name>WorkflowRule</name>
 	</types>
 	<types>
+		<members>addCandidateEvent</members>
+		<members>Agent_Application</members>
+		<members>harnessApp</members>
+		<members>newHireForm</members>
+		<members>newHireHeader</members>
+		<members>newHireListAgent</members>
 		<members>newApartment</members>
 		<members>newApartmentForm</members>
 		<members>newUnitForm</members>
