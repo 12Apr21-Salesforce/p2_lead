@@ -1,6 +1,6 @@
 public class Suggestion_CC {
     @AuraEnabled
-    public static List<Account> getSuggestions() {
+    public static List<Case> getSuggestions() {
    // Check to make sure all fields are accessible to this user
    /*    String[] fieldsToCheck = new String[] {
            'Id', 'Name', 'Amount__c', 'Client__c', 'Date__c',
@@ -15,10 +15,10 @@ public class Suggestion_CC {
         return [SELECT ContactId, Reason, Subject, Priority, Description FROM Case];
     }
     @AuraEnabled
-    public static Camping_Item__c saveSuggestions (Case newCase){
+    public static Case saveSuggestions (Case newCase){
         // Perform isUpdateable() checking first, then
-    insert item;
-    return item;
+    insert newCase;
+    return newCase;
     }
 }
 

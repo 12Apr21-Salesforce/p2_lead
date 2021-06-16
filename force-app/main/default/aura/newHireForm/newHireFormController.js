@@ -1,87 +1,74 @@
 ({    
-     doInit : function(cmp, event, helper) {
+    /* clickCreateCandidate: function(component, event, helper) {    
+     if(helper.validateItemForm(component)){
+         // Create the new item
+         var newCandidate = component.get("v.newCandidate");
+         helper.createItem(component, newCandidate);
+         }        
+     }*/
+/*     handleSubmit : function(cmp, event, helper) {
+        event.preventDefault();       // stop the form from submitting
+        const fields = event.getParam('fields');
+       // fields.LastName = ''; // modify a field
+        cmp.find('myRecordForm').submit(fields);
+    },
+    handleAddCandidate: function(component, event, helper) {
+        debugger;
+    var action = component.get("c.saveCandidate");
+    action.setParams({"candidate": addCandidate});
+    action.setCallback(this, function(response){
+    var state = response.getState();
+        if (component.isValid() && state === "SUCCESS") {
+            // all good, nothing to do.
+            var candidates = component.get("v.candidates");
+            alert(response.getReturnValue());
+            candidates.push(response.getReturnValue());
+            component.set("v.candidates", candidates);
+        }
+    });
+        $A.enqueueAction(action); 
+    }, */
+/*      doInit : function(cmp, event, helper) {
         cmp.set('v.columns', [
             {label: 'FirstName', fieldName: 'FirstName', type: 'text'},
             {label: 'LastName', fieldName: 'LastName', type: 'text'},
             {label: 'Email', fieldName: 'Email', type: 'email'},
             {label: 'Phone', fieldName: 'Phone', type: 'number'}
         ])
-        var action = component.get("c.getCandidateInfo");
-    
-        action.setCallback(this, function(data) {
-            component.set("v.Contacts", data.getReturnValue());
-        });
-        $A.enqueueAction(action);
-        },
-
-        clickCreateCandidate : function(component, event, helper) {
-
-        let fields = component.find("candidateForm");
-        if (fields) {
-            fields = Array.isArray(fields) ? fields : [fields];
-        }
-        else {
-            fields = [];
-        }
-        const valid = fields.reduce((validSoFar, field) => {
-    
-            return (validSoFar && field.reportValidity());
-        }, true);
-    
-        if (!valid) {
-            const toastEvent = $A.get("e.force:showToast");
-            toastEvent.setParams({
-                "message": "Correct any mistakes before adding the client.",
-                "type": "error"
-            });
-            toastEvent.fire();
-        }
-        else {
-            
-            component.find("editForm").submit();
-            const toastEvent = $A.get("e.force:showToast");
-            toastEvent.setParams({
-                "message": "Candidate Added Successfully",
-                "type": "success"
-            });
-            toastEvent.fire();
-         //   helper.candidateFormTrueToggle(component, event, helper);
-        }
+        helper.doInit(cmp, event)
+        helper.getCount(cmp, cmp.get('v.contactId'))
+    }, */
+    handleCaseSuccess: function(component, event, helper) {
+        var toastEvent = $A.get("e.force:showToast")
+  /*       toastEvent.setParams({
+            "title": "Success!",
+            "message": "Thank you for submitting a case: " + event.getParam("Id"),
+            "type": "success"
+        })
+        toastEvent.fire() */
     },
-    
-    handleSelect : function(component, event, helper) {
-        var selectedRows = event.getParam('selectedRows'); 
-        var setRows = [];
-        for ( var i = 0; i < selectedRows.length; i++ ) { 
-            setRows.push(selectedRows[i]);
-        }
-        component.set("v.selectedContacts", setRows); 
-         
-    },
-    
-    //Functions for Agent List
-    showSelectedCandidates: function(component, event, helper) {
-        var records = component.get("v.selectedContacts");
-        if(records.length > 0){
-        helper.candidateListTrueToggle(component, event, helper);
-    
-    } else {
-        const toastEvent = $A.get("e.force:showToast");
-        toastEvent.setParams({
-            "message": "Select At Least One Candidate",
-            "type": "error"
-        });
-        toastEvent.fire();
-        }
-    },
-    
-    selectNewAgents: function(component, event, helper){
-        helper.candidateListTrueToggle(component, event, helper);
-        component.set("v.selectedContacts", []);
-    },
-    
-/*     addAnotherAgents: function(component, event, helper){
-        helper.candidateListTrueToggle(component, event, helper);
-        helper.candidateFormTrueToggle(component, event, helper);
-    } */
- })
+        handleSuccess : function(component, event, helper) {
+       /*   var toastEvent = $A.get("e.force:showToast")
+         toastEvent.setParams({
+             "title": "Success!",
+             "message": "The Candidate has been updated.",
+             "type": "success"
+         })
+         toastEvent.fire() */
+         var contactId = event.getParams().response.id
+         component.set('v.contactId', contactId)
+         helper.showHide(component)
+     },
+         handleNewCandidate : function(component, event, helper) {
+         helper.fireCreateEvent(component)
+     },
+         clickCreateMoreCandidates: function(component, event, helper) {
+         // component.set('v.isVisible', false)
+         // component.set('v.isVisible', true)
+         let fields = component.find('field')
+         fields.forEach(function(f) {
+             f.reset()
+         })
+         helper.showHide(component)
+     }
+ }) 

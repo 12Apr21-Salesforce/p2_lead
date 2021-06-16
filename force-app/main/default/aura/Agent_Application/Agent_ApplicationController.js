@@ -19,14 +19,5 @@
         helper.getCount(cmp, event.getParam('contactId'))
         helper.init(cmp, event)
     },
-    doInit : function(cmp, event, helper) {
-        cmp.set('v.columns', [
-            {label: 'FirstName', fieldName: 'FirstName', type: 'text'},
-            {label: 'LastName', fieldName: 'LastName', type: 'text'},
-            {label: 'Email', fieldName: 'Email', type: 'email'},
-            {label: 'Phone', fieldName: 'Phone', type: 'number'}
-        ])
-        helper.doInit(cmp, event)
-        helper.getCount(cmp, cmp.get('v.contactId'))
-    } */
+ */
 })

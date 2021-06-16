@@ -1,5 +1,5 @@
 ({
-    doInit: function(cmp, event) {
+ /*    doInit: function(cmp, event) {
         let contactId = cmp.get('v.contactId')
         let action = cmp.get('c.getProspectsInfo')
         action.setParams({
@@ -28,7 +28,7 @@
         $A.enqueueAction(action)
         // $A.enqueueAction(action);
         //  component.get('v.candidateList')
-    },
+    }, */
 /*     getCount: function(cmp, contactId) {
         let action = cmp.get('c.saveCandidate')
         action.setParams({

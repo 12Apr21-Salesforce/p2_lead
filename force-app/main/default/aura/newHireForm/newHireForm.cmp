@@ -1,113 +1,99 @@
-<aura:component controller="Join_Our_Team_CC" 
-                implements="force:hasRecordId,
-                            forceCommunity:availableForAllPageTypes"
-                access="global">
-    <aura:attribute name="checkCandidateListTrue" type="Boolean" default="true" />
-    <!-- <aura:attribute name="contactId" type="String"></aura:attribute>    -->
-    <aura:attribute name="newCandidate" type="Contact" default="{ 'sobjectType': 'Contact',
-                                                                  'FirstName': '',
-                                                                  'LastName': '',
-                                                                  'Email': '@email.com',
-                                                                  'Phone': 0}"/>
-    <aura:attribute name="recordId" type="Id" />
-    <aura:attribute name="candidates" type="Contact[]"/>   
-    <aura:attribute name="Columns" type="List" />
-    <aura:attribute name="selectedContacts" type="List" />
-    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> 
-    <!--AGENT LIST ATTRIBUTES/HANDLER-->
+<aura:component implements="force:hasRecordId, forceCommunity:availableForAllPageTypes" access="global">
 
-    <!--SHOW CLIENT FORM--> 
-<!--     <aura:registerEvent name="addCandidate" type="c:addCandidateEvent"/> -->  
-    <div aria-labelledby="newCandidateForm">
-    <lightning:recordEditForm aura:id="editForm" recordId="{!v.candidate.Id}" objectApiName="Contact">
-               <lightning:card class="slds-is-relative" iconName="custom:custom85" title="Create New Candidate">
-              <lightning:layout>
-                 <lightning:layoutItem padding="around-small" size="6">
+    <aura:attribute name="candidate" type="Contact"></aura:attribute>  
+   <!--  <aura:attribute name="fields" type="String[]" default="['FirstName','LastName','Email', 'Phone']" /> --> 
+    <aura:attribute name="contactId" type="String"></aura:attribute>
+
+    <aura:attribute name="fields" type="String[]" default="['Reason', 'ContactId', 'Description', 'Subject', 'Priority']" />
+    <aura:attribute name="recordId" type="String" />
+    
+  <aura:attribute name="newCandidate" type="Contact"
+    default="{ 'sobjectType': 'Contact',
+                   'FirstName': '',
+                   'LastName': '',
+                   'Email': '@email.com',    
+                   'Phone': 0}"/>
+  <!--   <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> -->
+
+ <!--    <aura:handler name="addCandidate" event="c:addCandidateEvent" action="{!c.handleAddCandidate}"/> -->
+                   <!--<aura:attribute name="er" type="boolean" default="false"/> -->    
+
+    <aura:attribute name="candidates" type="Contact[]"/>  
+
+    <aura:registerEvent name="addCandidate" type="c:addCandidateEvent"/>
+        
+    <lightning:recordEditForm aura:id="editForm" recordId="{!v.recordId}" objectApiName="Contact" onsuccess="{!c.handleSuccess}">
+        <lightning:card class="slds-is-relative" iconName="custom:custom85" title="Create New Candidate">
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem padding="around-small" size="12">
+                    <div aria-labelledby="newCandidateForm">
             <!-- BOXED AREA -->
-                        <fieldset class="slds-box slds-theme_default slds-container_small">
+                       <!--  <fieldset class="slds-box slds-theme_default slds-container_large"> -->
                             <legend id="newCandidateForm" class="slds-text-heading_small slds-var-p-vertical_medium">
                                 Add New RE Agent Candidate
                             </legend>
-                            <form class="slds-form_stacked">
-                          <!--       <lightning:input aura:id="candidateForm" label="FirstName"
-                                                 name="FirstName"
-                                                 value="{!v.newCandidate.FirstName}"
+                            <div class="row">
+                                <div class="column">
+                                <lightning:inputField aura:id="candidateForm" label="FirstName"
+                                                fieldName="FirstName"
+                                                 name="FirstName"                                                 
                                                  required="true"/>	
-                                <lightning:input aura:id="candidateForm" label="LastName"
-                                                 name="LastName"
-                                                 value="{!v.newCandidate.LastName}"
+                                <lightning:inputField aura:id="candidateForm" label="LastName"
+                                                fieldName="LastName"
+                                                 name="LastName"                                                 
                                                  required="true"/>	
-                                <lightning:input type="email" aura:id="candidateForm" label="Email"
-                                                 name="candiateEmail"
-                                                 value="{!v.newCandidate.Email}"/>
-                                <lightning:input aura:id="candidateForm" label="Phone"
+                                </div>
+                                <div class="column">
+                                <lightning:inputField type="email" aura:id="candidateForm" label="Email"
+                                                fieldName="Email"
+                                                 name="candiateEmail"/>
+                                <lightning:inputField aura:id="candidateForm" label="Phone"
+                                                fieldName="Phone"
                                                  formatter="phone"
-                                                 name="candidatePhone"
-                                                 value="{!v.newCandidate.Phone}"/> -->
-                    <lightning:inputField fieldName="FirstName" required="true" aura:id="candidateForm"/>
-                      <lightning:inputField fieldName="LastName" required="true" aura:id="candidateForm"/>
-                       <lightning:inputField fieldName="Email" aura:id="candidateForm"/>
-                       <lightning:inputField fieldName="Phone" aura:id="candidateForm"/>
-                     <!--      <lightning:inputField fieldName="Funding_Status__c" aura:id="candidateForm"/> -->
-                            <lightning:button label="Add Candidate"
-                                                                   class="slds-var-m-top_medium"
-                                                                   variant="brand"
-                                                                   onclick="{!c.clickCreateCandidate}"/>
-                                
-                            <!--     <lightning:button variant="brand" label="Submit" title="Submit" type="submit" /> -->
-                                <!--  <lightning:button label="Create Agent Candidate" class="slds-m-top_medium"
-                                                  variant="brand" onclick="{!c.clickCreateCandidate}"/>-->
-                             </form> 
-                        </fieldset>            
+                                                 name="candidatePhone"/>
+                                </div>                             
+                            </div> 
+                            <div class="row slds-text-align_center">
+                                <lightning:button class="sbutton" variant="brand" label="Submit" title="Submit" type="submit" />
+                                </div>
+                              <!--    <lightning:button label="Create Agent Candidate" class="slds-m-top_medium"
+                                                  variant="brand" onclick="{!c.clickCreateCandidate}"/> -->                   
+                       <!--  </fieldset> -->
+                        <!-- / BOXED AREA -->
+                    </div>
+                    <!-- / CREATE NEW EXPENSE -->
+                    <!--  </div> -->
                 </lightning:layoutItem>
             </lightning:layout>
         </lightning:card>
-</lightning:recordEditForm>
-</div>
-<aura:if isTrue="{!v.checkCandidateListTrue}">
-    <force:recordData aura:id="contactRecord"               
-              targetFields="{!v.Contacts}"
-              layoutType="FULL"/>
-<lightning:card class="slds-card__body_inner" aura:id="Thecandidatelist" iconName="standard:contact" title="{!'Available Candidates'}">
-<lightning:datatable data="{! v.Contacts }" 
-                    columns="{! v.Columns }"
-                    keyField="Id"
-                    onrowselection="{!c.handleSelect}"/>
-
-<lightning:button   label="View Selected Agent"
-                    class="slds-m-top_medium"
-                    variant="brand"
-                    onclick="{!c.showSelectedAgents}"/>                    
+    </lightning:recordEditForm>
+    <div aura:id="editForm">
+    <lightning:recordViewForm aura:id="viewForm" recordId="{!v.contactId}" objectApiName="Contact" class="slds-hide">
+        <lightning:card class="slds-is-relative" iconName="custom:custom85" title="Candidate">
+            <lightning:layout multipleRows="true">
+                <lightning:layoutItem size="6">
+                    <lightning:outputField fieldName="FirstName" />
+                </lightning:layoutItem>
+                <lightning:layoutItem size="6">
+                    <lightning:outputField fieldName="LastName" />
+                </lightning:layoutItem>
+                <lightning:layoutItem size="6">
+                    <lightning:outputField fieldName="Email" />
+                </lightning:layoutItem>
+                <lightning:layoutItem size="6">
+                    <lightning:outputField fieldName="Phone" />
+                </lightning:layoutItem>
+            </lightning:layout>
+            <lightning:layout horizontalAlign="center" class="slds-var-m-top_large">
+                <lightning:button variant="neutral" label="Go Back" title="Go Back" type="text"
+                                  onclick="{!c.clickCreateMoreCandidates}" />
+                <lightning:button variant="brand" label="Create New Candidate" title="Create New Candidate"
+                                  type="text" onclick="{!c.handleNewCandidate}" />
+            </lightning:layout>
+        </lightning:card>
+    </lightning:recordViewForm>
+    <lightning:card>
+    <lightning:recordForm class="test1" objectApiName="Case" fields="{!v.fields}" onsuccess="{!c.handleCaseSuccess}" />
 </lightning:card>
-<!--HIDE AGENT LIST/SHOW AGENT CONTACT INFO-->
-<aura:set attribute="else">
-<div aura:id="TheCandidateform"  class="slds-col slds-col_padded slds-p-top_large">
-    <div aria-labelledby="newCandidateForm">
-        <fieldset class="slds-box slds-theme_default slds-container_medium">
-            <legend id="newCandidateForm" class="slds-text-heading_small
-                                                slds-var-p-vertical_medium">
-            Candidate Contact Information
-            </legend>    
-            <aura:iteration items="{!v.selectedContacts}" var="candidate">
-             <p> FirstName:&nbsp;{!candidate.FirstName}&nbsp;&nbsp;  
-                LastName:&nbsp;{!candidate.FirstName}&nbsp;&nbsp;  
-                 Phone:&nbsp;{!candidate.Phone}&nbsp;&nbsp;     
-                 Email:&nbsp;{!candidate.Email}&nbsp;
-            </p>
-            </aura:iteration>
-
-            <lightning:button   label="Select New Candidate"
-            class="slds-m-top_medium"
-            variant="brand"
-            onclick="{!c.selectNewCandidates}"/>
-    
-          <!--   <lightning:button   label="Add New Candidate"
-            class="slds-m-top_medium"
-            variant="brand"
-            onclick="{!c.addAnotherCandidates}"/> -->
-            </fieldset>  
     </div>
-</div>
-</aura:set>
-</aura:if>
 </aura:component>

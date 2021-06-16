@@ -8,7 +8,8 @@ public class Join_Our_Team_CC {
     Map<String,Schema.SObjectField> fieldDescribeTokens = 
     Schema.SObjectType.Contact.fields.getMap();
     for(String field : fieldsToCheck) {
-    if( ! fieldDescribeTokens.get(field).getDescribe().isAccessible()) {
+    //if( ! fieldDescribeTokens.get(field).getDescribe().isAccessible()) {
+    if( field != null && fieldDescribeTokens != null && fieldDescribeTokens.get(field) != null && fieldDescribeTokens.get(field).getDescribe() != null && fieldDescribeTokens.get(field).getDescribe().isAccessible() != null && !fieldDescribeTokens.get(field).getDescribe().isAccessible()) {
         throw new System.NoAccessException();
     }
     }
